@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 html {
   height: 100%;
 }
@@ -12,10 +13,13 @@ body {
   margin: 0;
   height: 100%;
   overflow-x: hidden;
-  font-family: var(--font-jost), 'Inter', Raleway, Ubuntu;
-  -webkit-font-smoothing: antialiased; /* Для Safari, Chrome и Opera */
-  -moz-osx-font-smoothing: grayscale; /* Для Firefox на macOS */
-  font-smoothing: antialiased; /* Общий стиль для других браузеров */
+  font-family: 'Inter',Raleway, Ubuntu;
+  -webkit-font-smoothing: antialiased;
+  /* Для Safari, Chrome и Opera */
+  -moz-osx-font-smoothing: grayscale;
+  /* Для Firefox на macOS */
+  font-smoothing: antialiased;
+  /* Общий стиль для других браузеров */
   min-height: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -100,9 +104,13 @@ input:-webkit-autofill:active {
 }
 
 td {
-  text-align: center; /* Выравнивание текста по центру */
+  text-align: center;
+
+  /* Выравнивание текста по центру */
   & * {
-    display: inline-block; /* Устанавливаем элементы как блочные */
-    vertical-align: middle; /* Выравнивание по вертикали по центру */
+    display: inline-block;
+    /* Устанавливаем элементы как блочные */
+    vertical-align: middle;
+    /* Выравнивание по вертикали по центру */
   }
 }

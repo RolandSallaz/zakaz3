@@ -3,7 +3,9 @@
         margin-top: 144px;
         display: flex;
         justify-content: space-between;
+        position: relative;
     }
+
     &__heading {
         font-weight: 800;
         font-size: 60px;
@@ -11,16 +13,19 @@
         max-width: 774px;
         margin-top: 60px;
     }
+
     &__description {
         font-size: 36px;
-        margin-top: 30px;
+        margin-top: 41px;
         max-width: 864px;
     }
+
     &__button-container {
         margin-top: 82px;
         display: flex;
         gap: 26px;
     }
+
     &__button {
         font-weight: 500;
         font-size: 24px;
@@ -31,11 +36,22 @@
         text-wrap: nowrap;
         gap: 10px;
         align-items: center;
+
         & img {
             width: 26px;
             height: 26px;
             margin: auto;
         }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__image {
+        z-index: 10;
+        user-select: none;
+        object-fit: contain;
     }
 }
 
@@ -51,15 +67,48 @@
     gap: 32px;
     list-style: none;
     padding: 0;
+
     &__item {
         font-size: 24px;
-        
+
     }
 
     &__link {
         font-size: 24px;
-        &:hover{
+
+        &:hover {
             opacity: 0.8;
         }
+    }
+}
+
+.elipse {
+    position: absolute;
+    z-index: -1;
+    width: 422px;
+    height: 422px;
+    user-select: none;
+    &_left {
+        background: rgba(243, 89, 141, 0.7);
+        filter: blur(225px);
+        left: -472px;
+        bottom: -170px;
+    }
+
+    &_right {
+        right: -400px;
+        top: 333px;
+        background: #F3598D;
+        filter: blur(245px);
+    }
+
+    &_center {
+        position: absolute;
+        width: 445px;
+        height: 484px;
+        left: calc(50% - 445px/2 + 326.5px);
+        top: 0;
+        background: #8D5DFF;
+        filter: blur(120px);
     }
 }

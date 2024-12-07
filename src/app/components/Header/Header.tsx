@@ -10,10 +10,10 @@ export default function Header() {
             <nav className='nav'>
                 <ul className='nav-list'>
                     <li className='nav-list__item'>
-                        <a href='#' className='nav-list__link'>Наши преимущества</a>
+                        <a href='#advantages' className='nav-list__link'>Наши преимущества</a>
                     </li>
                     <li className='nav-list__item'>
-                        <a href='#' className='nav-list__link'>Карты</a>
+                        <a href='#cards' className='nav-list__link'>Карты</a>
                     </li>
                     <li className='nav-list__item'>
                         <a href='#' className='nav-list__link'>Применение карт</a>
@@ -34,13 +34,16 @@ export default function Header() {
                     <h1 className='header__heading'>ПОМОЖЕМ ОФОРМИТЬ ИНОСТРАННУЮ БАНКОВСКУЮ КАРТУ ДИСТАНЦИОННО</h1>
                     <p className='header__description'>Оплачивайте онлайн-сервисы, совершайте покупки и бронируйте отели, как раньше</p>
                     <div className='header__button-container'>
-                        <button className='header__button'>Написать в WhatsApp <Image src={whatsAppImg.src} width={26} height={26} alt='wsImage'/></button>
-                        <button className='header__button'>Написать в Telegram <Image src={tgImg.src} width={26} height={26} alt='tgImage'/></button>
+                        <button className='header__button'>Написать в WhatsApp <Image src={whatsAppImg.src} width={26} height={26} alt='wsImage' /></button>
+                        <button className='header__button'>Написать в Telegram <Image src={tgImg.src} width={26} height={26} alt='tgImage' /></button>
                     </div>
                 </div>
                 <div>
-                    <Image src={cardImage.src} width={800} height={636} alt='Карточки' />
+                    <Image src={cardImage.src} width={800} height={636} alt='Карточки' className='header__image' />
                 </div>
+                <div className='elipse elipse_left' />
+                <div className='elipse elipse_center' />
+                <div className='elipse elipse_right' />
             </div>
         </header>
     )

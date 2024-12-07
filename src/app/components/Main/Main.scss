@@ -1,0 +1,11 @@
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-top: 312px;
+    &__container{
+        display: flex;
+        gap: 64px;
+        justify-content: stretch;
+    }
+}
