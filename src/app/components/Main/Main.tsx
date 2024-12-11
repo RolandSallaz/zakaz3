@@ -6,6 +6,7 @@ import doorImg from '../../../../public/system-uicons_door.svg';
 import supportImg from '../../../../public/fluent_person-support-24-regular.svg';
 import AdvantagesCard from '../advantagesCard/AdvantagesCard';
 import friendImg from '../../../../public/la_user-friends.svg';
+import Card from '../Card/Card';
 
 export default function Main() {
   return (
@@ -21,7 +22,13 @@ export default function Main() {
           <AdvantagesCard title='Приведи друга' description='Скидка 10% при покупке 2-х карт одновременно' withPurpleText imageLink={friendImg.src} />
         </div>
       </section>
-      <section id='cards'></section>
+      <section id='cards' className='cards'>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </section>
     </main>
   )
 }
