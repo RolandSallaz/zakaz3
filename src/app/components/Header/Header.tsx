@@ -16,10 +16,10 @@ export default function Header() {
                         <a href='#cards' className='nav-list__link'>Карты</a>
                     </li>
                     <li className='nav-list__item'>
-                        <a href='#' className='nav-list__link'>Применение карт</a>
+                        <a href='#usages' className='nav-list__link'>Применение карт</a>
                     </li>
                     <li className='nav-list__item'>
-                        <a href='#' className='nav-list__link'>Этапы открытия</a>
+                        <a href='#stages_of_opening' className='nav-list__link'>Этапы открытия</a>
                     </li>
                     <li className='nav-list__item'>
                         <a href='#' className='nav-list__link'>Отзывы</a>

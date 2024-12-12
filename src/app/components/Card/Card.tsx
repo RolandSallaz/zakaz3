@@ -50,9 +50,10 @@ export default function Card() {
                         Валюта ведения счета - USD или EUR
                     </li>
                 </ul>
+                <p className={styles.card__upd}>Дистанционное оформление, обновление, восстановление, корректировка ИИН Казахстана</p>
                 <div className={styles.contact_buttons}>
-                    <ContactButton type='ws' small/>
-                    <ContactButton type='tg' small/>
+                    <ContactButton type='ws' small />
+                    <ContactButton type='tg' small />
                 </div>
             </div>
         </article>

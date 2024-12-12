@@ -84,9 +84,14 @@ $topContainerColor: #8D5DFF;
     &__list {
         margin-top: 24px;
         padding-left: 30px;
-        &__item {
-            
-        }
+
+        &__item {}
+    }
+
+    &__upd {
+        margin-top: 25px;
+        font-size: 18px;
+        font-weight: 700;
     }
 }
 
@@ -121,5 +126,5 @@ $topContainerColor: #8D5DFF;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    gap:16px;
+    gap: 16px;
 }

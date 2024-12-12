@@ -1,0 +1,48 @@
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-top: 312px;
+
+    &__container {
+        display: flex;
+        gap: 64px;
+        justify-content: stretch;
+    }
+}
+
+.cards {
+    margin-top: 193px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    gap: 27px 40px;
+}
+
+.heading {
+    font-size: 61px;
+    font-weight: 700;
+    color: #8D5DFF;
+}
+
+.usages {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__container {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: row;
+        gap: 64px;
+    }
+}
+
+.stages_of_opening {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
