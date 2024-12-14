@@ -12,7 +12,15 @@ import gameImg from '../../../../public/fluent-mdl2_game.svg';
 import cardsTypesImg from '../../../../public/Frame 72.png';
 import planetImg from '../../../../public/ion_earth-outline.svg';
 import valutesImg from '../../../../public/Frame 73.svg';
+import lines1Img from '../../../../public/lines1.svg';
+import lines2Img from '../../../../public/lines2.svg';
+import lines3Img from '../../../../public/lines3.svg';
+import lines4Img from '../../../../public/lines4.svg';
+import review1Img from '../../../../public/IMAGE 2024-11-25 15_51_03 1.png';
+import review2Img from '../../../../public/IMAGE 2024-11-25 15_51_04 1.png';
+import review3Img from '../../../../public/IMAGE 2024-11-25 15_51_06 1.png';
 import Card from '../Card/Card';
+import Stage from '../Stage/Stage';
 
 export default function Main() {
   return (
@@ -46,8 +54,60 @@ export default function Main() {
           <AdvantagesCard width={239} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} />
         </div>
       </section>
-      <section id='stages_of_opening' className={styles.stages_of_opening}>
+      <section id='stages_of_opening' className={styles.stages}>
         <h2 className={styles.heading}>Этапы открытия</h2>
+        <div className={styles.stages__container}>
+          <div className={styles.stages__subcontainer}>
+            <Stage
+              index={1}
+              title='Выбор карты'
+              description='Ознакомьтесь с информацией и  свяжитесь с менеджером для обсуждения всех деталей и дальнейших шагов.'
+              style={{ maxWidth: '517px' }}
+            />
+            <img src={lines1Img.src} alt='линии' className={styles.stages__images_1} />
+            <Stage
+              style={{ marginRight: '121px' }}
+              index={2}
+              title='Отправляете необходимые документы и данные'
+              description='Если доверенность не требуется, достаточно будет скана вашего паспорта РФ или загранпаспорта. Если оформление будет проходить по доверенности, вам потребуется отправить нотариально заверенные документы почтой нашему сотруднику.' />
+            <img src={lines2Img.src} alt='линии' className={styles.stages__images_2} />
+          </div>
+          <div className={styles.stages__subcontainer}>
+            <Stage
+              index={3}
+              title='Оплатите услугу'
+              description='Внесите плату за услугу, размер которой зависит от выбранного вами типа карты.'
+              style={{ maxWidth: '517px' }}
+            />
+            <img src={lines3Img.src} alt='линии' className={styles.stages__images_3} />
+            <Stage
+              index={4}
+              title='Ожидайте подтверждение об открытии счета'
+              description='На этом этапе остается только дождаться, пока счет не будет открыт.'
+              style={{ marginRight: '165px' }}
+            />
+            <img src={lines4Img.src} alt='линии' className={styles.stages__images_4} />
+          </div>
+          <div className={styles.stages__subcontainer}>
+            <Stage
+              index={5}
+              title='Готово!'
+              description='Теперь вы можете пользоваться своей картой зарубежного банка для международных операций, не забудте уведомить ФНС об открытии иностранного счета (это не сложно, мы вам поможем).'
+              style={{ maxWidth: '770px' }}
+            />
+          </div>
+        </div>
+      </section>
+      <section id='reviews' className={styles.reviews}>
+        <h2 className={styles.heading}>Отзывы</h2>
+        <div className={styles.reviews__container}>
+          <img src={review1Img.src} alt='скриншот отзыва' />
+          <img src={review2Img.src} alt='скриншот отзыва' />
+          <img src={review3Img.src} alt='скриншот отзыва' />
+        </div>
+      </section>
+      <section id='question_and_answer' className={styles.qaa}>
+        <h2 className={styles.heading}>Вопрос-ответ</h2>
       </section>
     </main>
   );

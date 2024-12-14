@@ -1,0 +1,29 @@
+.stage {
+    padding: 30px;
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 40px;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    &__index {
+        font-size: 102px;
+        font-weight: 500;
+        color: #8D5DFF;
+        display: inline-block;
+        line-height: 1;
+    }
+
+    &__title {
+        margin-top: 20px;
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    &__description {
+        margin-top: 16px;
+        font-size: 24px;
+    }
+}

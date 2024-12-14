@@ -22,10 +22,10 @@ export default function Header() {
                         <a href='#stages_of_opening' className='nav-list__link'>Этапы открытия</a>
                     </li>
                     <li className='nav-list__item'>
-                        <a href='#' className='nav-list__link'>Отзывы</a>
+                        <a href='#reviews' className='nav-list__link'>Отзывы</a>
                     </li>
                     <li className='nav-list__item'>
-                        <a href='#' className='nav-list__link'>Вопрос-ответ</a>
+                        <a href='#question_and_answer' className='nav-list__link'>Вопрос-ответ</a>
                     </li>
                 </ul>
             </nav>
