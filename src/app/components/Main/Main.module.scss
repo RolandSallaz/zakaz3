@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 64px;
     margin-top: 312px;
-
     &__container {
         display: flex;
         gap: 64px;
@@ -129,4 +128,14 @@
 
   .qaa {
     margin-top: 200px;
+    &__container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap:25px;
+    }
+  }
+
+  .main {
+    padding-bottom: 110px;
   }
