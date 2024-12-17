@@ -115,3 +115,9 @@ td {
     /* Выравнивание по вертикали по центру */
   }
 }
+
+@media screen and (max-width: 1279px) {
+  body {
+    padding: 0 16px;
+  }
+}

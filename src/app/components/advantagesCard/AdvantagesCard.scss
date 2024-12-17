@@ -6,6 +6,7 @@
     border: 1px solid black;
     border-radius: 40px;
     width: 100%;
+
     &__image {
         width: 128px;
         height: 128px;
@@ -29,5 +30,33 @@
     &__purple {
         color: #8D5DFF;
         font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .advantages-card {
+        border-radius: 18px;
+        padding: 16px;
+
+        &__image {
+            width: 64px;
+            height: 64px;
+        }
+
+        &__title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24.2px;
+            text-align: left;
+            margin-top: 11px;
+        }
+
+        &__description {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16.94px;
+            text-align: left;
+            margin-top: 13px;
+        }
     }
 }

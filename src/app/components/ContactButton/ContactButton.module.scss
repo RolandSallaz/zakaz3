@@ -15,6 +15,7 @@
         padding-top: 16px;
         padding-bottom: 16px;
         justify-content: center;
+
         & img {
             width: 23px;
             height: 23px;
@@ -30,5 +31,20 @@
 
     &:hover {
         opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .button {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.94px;
+        padding: 10px 0px;
+        justify-content: center;
+        gap:10px;
+        & img {
+            width: 22px;
+            margin: 0;
+        }
     }
 }

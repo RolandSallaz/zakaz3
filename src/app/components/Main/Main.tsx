@@ -22,20 +22,32 @@ import review3Img from '../../../../public/IMAGE 2024-11-25 15_51_06 1.png';
 import Card from '../Card/Card';
 import Stage from '../Stage/Stage';
 import Qaa from '../Qaa/Qaa';
+import VariableRender from '../VariableRender/VariableRender';
 
 export default function Main() {
   return (
     <main className={styles.main}>
       <section id='advantages' className={styles.advantages}>
-        <div className={styles.advantages__container}>
+        <VariableRender renderOnDesk children={<><div className={styles.advantages__container}>
           <AdvantagesCard title='Оформление карты без доверенности' description='Потребуется только загранпаспорт' imageLink={carbonDocImg.src} />
           <AdvantagesCard title='Гарантируем конфиденциальность' description='Полная безопасность ваших данных' imageLink={secureImg.src} />
           <AdvantagesCard title='Полностью удаленно с доставкой на дом' description='Максимально удобно' imageLink={doorImg.src} />
         </div>
-        <div className={styles.advantages__container}>
-          <AdvantagesCard title='Поддержка на всех этапах' description='Сопровождение на всех этапах открытия' imageLink={supportImg.src} />
-          <AdvantagesCard title='Приведи друга' description='Скидка 10% при покупке 2-х карт одновременно' withPurpleText imageLink={friendImg.src} />
-        </div>
+          <div className={styles.advantages__container}>
+            <AdvantagesCard title='Поддержка на всех этапах' description='Сопровождение на всех этапах открытия' imageLink={supportImg.src} />
+            <AdvantagesCard title='Приведи друга' description='Скидка 10% при покупке 2-х карт одновременно' withPurpleText imageLink={friendImg.src} />
+          </div></>}
+        />
+        <VariableRender renderOnMob children={
+          <>
+            <div className={styles.advantages__container}>
+              <AdvantagesCard title='Оформление карты без доверенности' description='Потребуется только загранпаспорт' imageLink={carbonDocImg.src} width={64} />
+              <AdvantagesCard title='Гарантируем конфиденциальность' description='Полная безопасность ваших данных' imageLink={secureImg.src} width={64} />
+              <AdvantagesCard title='Полностью удаленно с доставкой на дом' description='Максимально удобно' imageLink={doorImg.src} width={64} />
+              <AdvantagesCard title='Поддержка на всех этапах' description='Сопровождение на всех этапах открытия' imageLink={supportImg.src} width={64} />
+              <AdvantagesCard title='Приведи друга' description='Скидка 10% при покупке 2-х карт одновременно' withPurpleText imageLink={friendImg.src} width={64} />
+            </div>
+          </>} />
       </section>
       <section id='cards' className={styles.cards}>
         <Card />

@@ -96,6 +96,14 @@
 }
 
 @media screen and (max-width: 1820px) {
+    .advantages {
+        margin-top: 194px;
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+        }
+    }
     .stages {
         &__images {
             &_2 {
