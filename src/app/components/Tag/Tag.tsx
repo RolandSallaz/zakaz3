@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from './Tag.module.scss';
 
-export default function Tag() {
+interface props {
+    tag: string;
+}
+
+export default function Tag({ tag }: props) {
     return (
         <p className={styles.tag}>
-            USD
+            {tag}
         </p>
     )
 }
