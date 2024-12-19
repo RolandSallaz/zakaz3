@@ -14,7 +14,7 @@ export default function ContactButton({ type = 'ws', small }: props) {
   function handleClick() {
     let url;
     if (type == 'ws') {
-      url = `https://wa.me/89818253910`;
+      url = `https://wa.me/79818253910`;
     }
     else {
       url = 'https://t.me/DanilaCard'
