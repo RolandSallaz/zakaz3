@@ -11,8 +11,6 @@ services:
       - 3000:3000
     networks:
       - net
-    depends_on:
-      - backend
   
   nginx:
     build:
