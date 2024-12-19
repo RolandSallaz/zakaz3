@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  frontend:
+    container_name: "frontend"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 5173:3000
+    networks:
+      - net
+    depends_on:
+      - backend
+  
+  nginx:
+    build:
+      context: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ssl:/etc/ssl
+    depends_on:
+      - frontend
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
