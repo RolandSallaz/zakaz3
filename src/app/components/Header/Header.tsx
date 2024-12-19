@@ -14,13 +14,17 @@ export default function Header() {
                 <div className='header__sub'>
                     <h1 className='header__heading'>ПОМОЖЕМ ОФОРМИТЬ ИНОСТРАННУЮ БАНКОВСКУЮ КАРТУ ДИСТАНЦИОННО</h1>
                     <p className='header__description'>Оплачивайте онлайн-сервисы, совершайте покупки и бронируйте отели, как раньше</p>
-                    <VariableRender renderOnMob children={<HeaderImage isMob />} />
+                    <VariableRender renderOnMob>
+                        <HeaderImage isMob />
+                    </VariableRender>
                     <div className='header__button-container'>
                         <ContactButton type='ws' />
                         <ContactButton type='tg' />
                     </div>
                 </div>
-                <VariableRender renderOnDesk children={<HeaderImage />} />
+                <VariableRender renderOnDesk>
+                    <HeaderImage />
+                </VariableRender>
             </div>
         </header>
     )

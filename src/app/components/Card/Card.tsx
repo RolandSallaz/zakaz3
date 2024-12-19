@@ -1,10 +1,8 @@
-import React, { ReactNode } from 'react';
-import styles from './Card.module.scss';
+import { ReactNode } from 'react';
 import mcImage from '../../../../public/mastercard.png';
 import visaImage from '../../../../public/visa.png';
-import Tag from '../Tag/Tag';
-import Image from 'next/image';
 import ContactButton from '../ContactButton/ContactButton';
+import styles from './Card.module.scss';
 
 interface props {
     title: string;

@@ -31,17 +31,18 @@ export default function Main() {
   return (
     <main className={styles.main}>
       <section id='advantages' className={styles.advantages}>
-        <VariableRender renderOnDesk children={<><div className={styles.advantages__container}>
-          <AdvantagesCard title='Оформление карты без доверенности' description='Потребуется только загранпаспорт' imageLink={carbonDocImg.src} />
-          <AdvantagesCard title='Гарантируем конфиденциальность' description='Полная безопасность ваших данных' imageLink={secureImg.src} />
-          <AdvantagesCard title='Полностью удаленно с доставкой на дом' description='Максимально удобно' imageLink={doorImg.src} />
-        </div>
-          <div className={styles.advantages__container}>
-            <AdvantagesCard title='Поддержка на всех этапах' description='Сопровождение на всех этапах открытия' imageLink={supportImg.src} />
-            <AdvantagesCard title='Приведи друга' description='Скидка 10% при покупке 2-х карт одновременно' withPurpleText imageLink={friendImg.src} />
-          </div></>}
-        />
-        <VariableRender renderOnMob children={
+        <VariableRender renderOnDesk>
+          <><div className={styles.advantages__container}>
+            <AdvantagesCard title='Оформление карты без доверенности' description='Потребуется только загранпаспорт' imageLink={carbonDocImg.src} />
+            <AdvantagesCard title='Гарантируем конфиденциальность' description='Полная безопасность ваших данных' imageLink={secureImg.src} />
+            <AdvantagesCard title='Полностью удаленно с доставкой на дом' description='Максимально удобно' imageLink={doorImg.src} />
+          </div>
+            <div className={styles.advantages__container}>
+              <AdvantagesCard title='Поддержка на всех этапах' description='Сопровождение на всех этапах открытия' imageLink={supportImg.src} />
+              <AdvantagesCard title='Приведи друга' description='Скидка 10% при покупке 2-х карт одновременно' withPurpleText imageLink={friendImg.src} />
+            </div></>
+        </VariableRender>
+        <VariableRender renderOnMob >
           <>
             <div className={styles.advantages__container}>
               <AdvantagesCard title='Оформление карты без доверенности' description='Потребуется только загранпаспорт' imageLink={carbonDocImg.src} width={64} />
@@ -50,7 +51,8 @@ export default function Main() {
               <AdvantagesCard title='Поддержка на всех этапах' description='Сопровождение на всех этапах открытия' imageLink={supportImg.src} width={64} />
               <AdvantagesCard title='Приведи друга' description='Скидка 10% при покупке 2-х карт одновременно' withPurpleText imageLink={friendImg.src} width={64} />
             </div>
-          </>} />
+          </>
+        </VariableRender>
       </section>
       <section id='cards' className={styles.cards}>
         <Card
@@ -232,20 +234,25 @@ export default function Main() {
       <section id='usages' className={styles.usages}>
         <h2 className={styles.heading}>Для чего нужна зарубежная карта?</h2>
         <div className={styles.usages__container}>
-          <VariableRender renderOnDesk children={<>
-            <AdvantagesCard title='Покупки и снятие наличных за границей' description='Используйте свою виртуальную или пластиковую карту для покупок в магазинах и снятия наличных в банкоматах за рубежом' imageLink={tablerCashImg.src} />
-            <AdvantagesCard title='Оплата в международных интернет-магазинах' description='Делайте покупки в зарубежных онлайн-магазинах с помощью своей карты.' imageLink={fluentImg.src} />
-            <AdvantagesCard title='Оплата подписок и игр на зарубежных платформах' description='Оплачивайте цифровые товары на популярных сервисах, таких как Spotify, Steam, PS Store, Netflix, Appstore и другие.' imageLink={gameImg.src} />
-            <AdvantagesCard width={260} title='Привязка к платежным системам' description='Карты зарубежных банков Visa и Mastercard можно привязать к Apple Pay, Samsung Pay, Google Pay, PayPal и другим платёжным системам.' imageLink={cardsTypesImg.src} />
-            <AdvantagesCard title='Приём платежей из-за границы' description='Принимайте оплату от зарубежных клиентов или фриланс-бирж напрямую на свою карту.' imageLink={planetImg.src} />
-            <AdvantagesCard width={239} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} /></>} />
-          <VariableRender renderOnMob children={<>
-            <AdvantagesCard width={64} title='Покупки и снятие наличных за границей' description='Используйте свою виртуальную или пластиковую карту для покупок в магазинах и снятия наличных в банкоматах за рубежом' imageLink={tablerCashImg.src} />
-            <AdvantagesCard width={64} title='Оплата в международных интернет-магазинах' description='Делайте покупки в зарубежных онлайн-магазинах с помощью своей карты.' imageLink={fluentImg.src} />
-            <AdvantagesCard width={64} title='Оплата подписок и игр на зарубежных платформах' description='Оплачивайте цифровые товары на популярных сервисах, таких как Spotify, Steam, PS Store, Netflix, Appstore и другие.' imageLink={gameImg.src} />
-            <AdvantagesCard width={142} title='Привязка к платежным системам' description='Карты зарубежных банков Visa и Mastercard можно привязать к Apple Pay, Samsung Pay, Google Pay, PayPal и другим платёжным системам.' imageLink={cardsTypesImg.src} />
-            <AdvantagesCard width={64} title='Приём платежей из-за границы' description='Принимайте оплату от зарубежных клиентов или фриланс-бирж напрямую на свою карту.' imageLink={planetImg.src} />
-            <AdvantagesCard width={116} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} /></>} />
+          <VariableRender renderOnDesk>
+            <>
+              <AdvantagesCard title='Покупки и снятие наличных за границей' description='Используйте свою виртуальную или пластиковую карту для покупок в магазинах и снятия наличных в банкоматах за рубежом' imageLink={tablerCashImg.src} />
+              <AdvantagesCard title='Оплата в международных интернет-магазинах' description='Делайте покупки в зарубежных онлайн-магазинах с помощью своей карты.' imageLink={fluentImg.src} />
+              <AdvantagesCard title='Оплата подписок и игр на зарубежных платформах' description='Оплачивайте цифровые товары на популярных сервисах, таких как Spotify, Steam, PS Store, Netflix, Appstore и другие.' imageLink={gameImg.src} />
+              <AdvantagesCard width={260} title='Привязка к платежным системам' description='Карты зарубежных банков Visa и Mastercard можно привязать к Apple Pay, Samsung Pay, Google Pay, PayPal и другим платёжным системам.' imageLink={cardsTypesImg.src} />
+              <AdvantagesCard title='Приём платежей из-за границы' description='Принимайте оплату от зарубежных клиентов или фриланс-бирж напрямую на свою карту.' imageLink={planetImg.src} />
+              <AdvantagesCard width={239} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} />
+            </>
+          </VariableRender>
+          <VariableRender renderOnMob>
+            <>
+              <AdvantagesCard width={64} title='Покупки и снятие наличных за границей' description='Используйте свою виртуальную или пластиковую карту для покупок в магазинах и снятия наличных в банкоматах за рубежом' imageLink={tablerCashImg.src} />
+              <AdvantagesCard width={64} title='Оплата в международных интернет-магазинах' description='Делайте покупки в зарубежных онлайн-магазинах с помощью своей карты.' imageLink={fluentImg.src} />
+              <AdvantagesCard width={64} title='Оплата подписок и игр на зарубежных платформах' description='Оплачивайте цифровые товары на популярных сервисах, таких как Spotify, Steam, PS Store, Netflix, Appstore и другие.' imageLink={gameImg.src} />
+              <AdvantagesCard width={142} title='Привязка к платежным системам' description='Карты зарубежных банков Visa и Mastercard можно привязать к Apple Pay, Samsung Pay, Google Pay, PayPal и другим платёжным системам.' imageLink={cardsTypesImg.src} />
+              <AdvantagesCard width={64} title='Приём платежей из-за границы' description='Принимайте оплату от зарубежных клиентов или фриланс-бирж напрямую на свою карту.' imageLink={planetImg.src} />
+              <AdvantagesCard width={116} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} /></>
+          </VariableRender>
         </div>
       </section>
       <section id='stages_of_opening' className={styles.stages}>
@@ -253,50 +260,49 @@ export default function Main() {
         <div className={styles.stages__container}>
           <VariableRender
             renderOnDesk
-            children={
-              <>
-                <div className={styles.stages__subcontainer}>
-                  <Stage
-                    index={1}
-                    title='Выбор карты'
-                    description='Ознакомьтесь с информацией и  свяжитесь с менеджером для обсуждения всех деталей и дальнейших шагов.'
-                    style={{ maxWidth: '517px' }}
-                  />
-                  <img src={lines1Img.src} alt='линии' className={styles.stages__images_1} />
-                  <Stage
-                    style={{ marginRight: '121px' }}
-                    index={2}
-                    title='Отправляете необходимые документы и данные'
-                    description='Если доверенность не требуется, достаточно будет скана вашего паспорта РФ или загранпаспорта. Если оформление будет проходить по доверенности, вам потребуется отправить нотариально заверенные документы почтой нашему сотруднику.' />
-                  <img src={lines2Img.src} alt='линии' className={styles.stages__images_2} />
-                </div>
-                <div className={styles.stages__subcontainer}>
-                  <Stage
-                    index={3}
-                    title='Оплатите услугу'
-                    description='Внесите плату за услугу, размер которой зависит от выбранного вами типа карты.'
-                    style={{ maxWidth: '517px' }}
-                  />
-                  <img src={lines3Img.src} alt='линии' className={styles.stages__images_3} />
-                  <Stage
-                    index={4}
-                    title='Ожидайте подтверждение об открытии счета'
-                    description='На этом этапе остается только дождаться, пока счет не будет открыт.'
-                    style={{ marginRight: '165px' }}
-                  />
-                  <img src={lines4Img.src} alt='линии' className={styles.stages__images_4} />
-                </div>
-                <div className={styles.stages__subcontainer}>
-                  <Stage
-                    index={5}
-                    title='Готово!'
-                    description='Теперь вы можете пользоваться своей картой зарубежного банка для международных операций, не забудте уведомить ФНС об открытии иностранного счета (это не сложно, мы вам поможем).'
-                    style={{ maxWidth: '770px' }}
-                  />
-                </div>
-              </>
-            }
-          />
+          >
+            <>
+              <div className={styles.stages__subcontainer}>
+                <Stage
+                  index={1}
+                  title='Выбор карты'
+                  description='Ознакомьтесь с информацией и  свяжитесь с менеджером для обсуждения всех деталей и дальнейших шагов.'
+                  style={{ maxWidth: '517px' }}
+                />
+                <img src={lines1Img.src} alt='линии' className={styles.stages__images_1} />
+                <Stage
+                  style={{ marginRight: '121px' }}
+                  index={2}
+                  title='Отправляете необходимые документы и данные'
+                  description='Если доверенность не требуется, достаточно будет скана вашего паспорта РФ или загранпаспорта. Если оформление будет проходить по доверенности, вам потребуется отправить нотариально заверенные документы почтой нашему сотруднику.' />
+                <img src={lines2Img.src} alt='линии' className={styles.stages__images_2} />
+              </div>
+              <div className={styles.stages__subcontainer}>
+                <Stage
+                  index={3}
+                  title='Оплатите услугу'
+                  description='Внесите плату за услугу, размер которой зависит от выбранного вами типа карты.'
+                  style={{ maxWidth: '517px' }}
+                />
+                <img src={lines3Img.src} alt='линии' className={styles.stages__images_3} />
+                <Stage
+                  index={4}
+                  title='Ожидайте подтверждение об открытии счета'
+                  description='На этом этапе остается только дождаться, пока счет не будет открыт.'
+                  style={{ marginRight: '165px' }}
+                />
+                <img src={lines4Img.src} alt='линии' className={styles.stages__images_4} />
+              </div>
+              <div className={styles.stages__subcontainer}>
+                <Stage
+                  index={5}
+                  title='Готово!'
+                  description='Теперь вы можете пользоваться своей картой зарубежного банка для международных операций, не забудте уведомить ФНС об открытии иностранного счета (это не сложно, мы вам поможем).'
+                  style={{ maxWidth: '770px' }}
+                />
+              </div>
+            </>
+          </VariableRender>
           <VariableRender renderOnMob>
             <div className={styles.stages__subcontainer}>
               <Stage
