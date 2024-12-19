@@ -121,3 +121,15 @@ td {
     padding: 0 16px;
   }
 }
+
+.swiper-slide {
+  width: fit-content !important;
+}
+
+.swiper-wrapper {
+  margin-bottom: 29px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #8D5DFF !important;
+}

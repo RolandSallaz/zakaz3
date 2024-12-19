@@ -1,17 +1,13 @@
 'use client'
-import React, { useMemo } from 'react'
-import styles from './HeaderImage.module.scss';
-import cardImage from '../../../../public/cards.png';
 import Image from 'next/image';
-import useWindowDimensions from '@/app/hooks/useWindowDimensions';
+import cardImage from '../../../../public/cards.png';
+import styles from './HeaderImage.module.scss';
 
 interface props {
     isMob?: boolean;
 }
 
 export default function HeadderImage({ isMob = false }: props) {
-    const { width } = useWindowDimensions();
-    const isMobile = useMemo(() => width < 1279, [width]);
     return (
         <>
             {isMob ? (

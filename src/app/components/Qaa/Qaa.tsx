@@ -1,8 +1,8 @@
 'use client'
-import React, { useState } from 'react'
-import styles from './Qaa.module.scss';
-import plusImg from '../../../../public/plus.svg';
+import { useState } from 'react';
 import minusImg from '../../../../public/minus.svg';
+import plusImg from '../../../../public/plus.svg';
+import styles from './Qaa.module.scss';
 
 interface props {
     question: string;

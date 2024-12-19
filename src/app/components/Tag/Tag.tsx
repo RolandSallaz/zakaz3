@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Tag.module.scss';
+import './Tag.scss';
 
 interface props {
     tag: string;
@@ -7,7 +7,7 @@ interface props {
 
 export default function Tag({ tag }: props) {
     return (
-        <p className={styles.tag}>
+        <p className={'tag'}>
             {tag}
         </p>
     )

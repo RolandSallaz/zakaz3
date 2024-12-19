@@ -24,6 +24,8 @@ import Stage from '../Stage/Stage';
 import Qaa from '../Qaa/Qaa';
 import VariableRender from '../VariableRender/VariableRender';
 import Tag from '../Tag/Tag';
+import downImages from '../../../../public/downLines.svg';
+import SwiperImages from '../SwiperImages/SwiperImages';
 
 export default function Main() {
   return (
@@ -203,67 +205,146 @@ export default function Main() {
           ]}
         />
       </section>
+      <section className={styles.services}>
+        <Card
+          title='ИИН Казахстана без карты'
+          description='Файл формата pdf'
+          price={5000}
+          small
+          upd='Дистанционное оформление, обновление, восстановление, корректировка ИИН Казахстана'
+          service='ИИН нужен для получения любой официальной услуги в Казахстане, открытия банковского счета, оформления документов. При этом у получателя не возникает никаких налоговых обязательств. ИИН аналогичен документу, удостоверяющему личность, только в цифровом формате '
+        />
+        <Card
+          title='Sim/Esim Казахстана'
+          description='Физическая или виртуальная'
+          price={1000}
+          small
+          service='Sim или eSim дистанционно оформим и доставим пластиковую физическую карту Tele2 или Activ за счет клиента, или выпустим виртуальную сим-карту Казахастана'
+        />
+        <Card
+          title='ЭЦП'
+          description='Электронная цифровая подпись'
+          price={1000}
+          small
+          service='Электронная цифровая подпись - это реквизит электронного документа, предназначенный для защиты данного электронного документа от подделки, используется для подписи электронных документов и получения услуг ЦОН Казахстана'
+        />
+      </section>
       <section id='usages' className={styles.usages}>
         <h2 className={styles.heading}>Для чего нужна зарубежная карта?</h2>
         <div className={styles.usages__container}>
-          <AdvantagesCard title='Покупки и снятие наличных за границей' description='Используйте свою виртуальную или пластиковую карту для покупок в магазинах и снятия наличных в банкоматах за рубежом' imageLink={tablerCashImg.src} />
-          <AdvantagesCard title='Оплата в международных интернет-магазинах' description='Делайте покупки в зарубежных онлайн-магазинах с помощью своей карты.' imageLink={fluentImg.src} />
-          <AdvantagesCard title='Оплата подписок и игр на зарубежных платформах' description='Оплачивайте цифровые товары на популярных сервисах, таких как Spotify, Steam, PS Store, Netflix, Appstore и другие.' imageLink={gameImg.src} />
-          <AdvantagesCard width={260} title='Привязка к платежным системам' description='Карты зарубежных банков Visa и Mastercard можно привязать к Apple Pay, Samsung Pay, Google Pay, PayPal и другим платёжным системам.' imageLink={cardsTypesImg.src} />
-          <AdvantagesCard title='Приём платежей из-за границы' description='Принимайте оплату от зарубежных клиентов или фриланс-бирж напрямую на свою карту.' imageLink={planetImg.src} />
-          <AdvantagesCard width={239} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} />
+          <VariableRender renderOnDesk children={<>
+            <AdvantagesCard title='Покупки и снятие наличных за границей' description='Используйте свою виртуальную или пластиковую карту для покупок в магазинах и снятия наличных в банкоматах за рубежом' imageLink={tablerCashImg.src} />
+            <AdvantagesCard title='Оплата в международных интернет-магазинах' description='Делайте покупки в зарубежных онлайн-магазинах с помощью своей карты.' imageLink={fluentImg.src} />
+            <AdvantagesCard title='Оплата подписок и игр на зарубежных платформах' description='Оплачивайте цифровые товары на популярных сервисах, таких как Spotify, Steam, PS Store, Netflix, Appstore и другие.' imageLink={gameImg.src} />
+            <AdvantagesCard width={260} title='Привязка к платежным системам' description='Карты зарубежных банков Visa и Mastercard можно привязать к Apple Pay, Samsung Pay, Google Pay, PayPal и другим платёжным системам.' imageLink={cardsTypesImg.src} />
+            <AdvantagesCard title='Приём платежей из-за границы' description='Принимайте оплату от зарубежных клиентов или фриланс-бирж напрямую на свою карту.' imageLink={planetImg.src} />
+            <AdvantagesCard width={239} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} /></>} />
+          <VariableRender renderOnMob children={<>
+            <AdvantagesCard width={64} title='Покупки и снятие наличных за границей' description='Используйте свою виртуальную или пластиковую карту для покупок в магазинах и снятия наличных в банкоматах за рубежом' imageLink={tablerCashImg.src} />
+            <AdvantagesCard width={64} title='Оплата в международных интернет-магазинах' description='Делайте покупки в зарубежных онлайн-магазинах с помощью своей карты.' imageLink={fluentImg.src} />
+            <AdvantagesCard width={64} title='Оплата подписок и игр на зарубежных платформах' description='Оплачивайте цифровые товары на популярных сервисах, таких как Spotify, Steam, PS Store, Netflix, Appstore и другие.' imageLink={gameImg.src} />
+            <AdvantagesCard width={142} title='Привязка к платежным системам' description='Карты зарубежных банков Visa и Mastercard можно привязать к Apple Pay, Samsung Pay, Google Pay, PayPal и другим платёжным системам.' imageLink={cardsTypesImg.src} />
+            <AdvantagesCard width={64} title='Приём платежей из-за границы' description='Принимайте оплату от зарубежных клиентов или фриланс-бирж напрямую на свою карту.' imageLink={planetImg.src} />
+            <AdvantagesCard width={116} title='Хранение сбережений в валюте' description='Держите свои накопления в валюте на собственном именном счёте с ежемесячным начислением процентов.' imageLink={valutesImg.src} /></>} />
         </div>
       </section>
       <section id='stages_of_opening' className={styles.stages}>
         <h2 className={styles.heading}>Этапы открытия</h2>
         <div className={styles.stages__container}>
-          <div className={styles.stages__subcontainer}>
-            <Stage
-              index={1}
-              title='Выбор карты'
-              description='Ознакомьтесь с информацией и  свяжитесь с менеджером для обсуждения всех деталей и дальнейших шагов.'
-              style={{ maxWidth: '517px' }}
-            />
-            <img src={lines1Img.src} alt='линии' className={styles.stages__images_1} />
-            <Stage
-              style={{ marginRight: '121px' }}
-              index={2}
-              title='Отправляете необходимые документы и данные'
-              description='Если доверенность не требуется, достаточно будет скана вашего паспорта РФ или загранпаспорта. Если оформление будет проходить по доверенности, вам потребуется отправить нотариально заверенные документы почтой нашему сотруднику.' />
-            <img src={lines2Img.src} alt='линии' className={styles.stages__images_2} />
-          </div>
-          <div className={styles.stages__subcontainer}>
-            <Stage
-              index={3}
-              title='Оплатите услугу'
-              description='Внесите плату за услугу, размер которой зависит от выбранного вами типа карты.'
-              style={{ maxWidth: '517px' }}
-            />
-            <img src={lines3Img.src} alt='линии' className={styles.stages__images_3} />
-            <Stage
-              index={4}
-              title='Ожидайте подтверждение об открытии счета'
-              description='На этом этапе остается только дождаться, пока счет не будет открыт.'
-              style={{ marginRight: '165px' }}
-            />
-            <img src={lines4Img.src} alt='линии' className={styles.stages__images_4} />
-          </div>
-          <div className={styles.stages__subcontainer}>
-            <Stage
-              index={5}
-              title='Готово!'
-              description='Теперь вы можете пользоваться своей картой зарубежного банка для международных операций, не забудте уведомить ФНС об открытии иностранного счета (это не сложно, мы вам поможем).'
-              style={{ maxWidth: '770px' }}
-            />
-          </div>
+          <VariableRender
+            renderOnDesk
+            children={
+              <>
+                <div className={styles.stages__subcontainer}>
+                  <Stage
+                    index={1}
+                    title='Выбор карты'
+                    description='Ознакомьтесь с информацией и  свяжитесь с менеджером для обсуждения всех деталей и дальнейших шагов.'
+                    style={{ maxWidth: '517px' }}
+                  />
+                  <img src={lines1Img.src} alt='линии' className={styles.stages__images_1} />
+                  <Stage
+                    style={{ marginRight: '121px' }}
+                    index={2}
+                    title='Отправляете необходимые документы и данные'
+                    description='Если доверенность не требуется, достаточно будет скана вашего паспорта РФ или загранпаспорта. Если оформление будет проходить по доверенности, вам потребуется отправить нотариально заверенные документы почтой нашему сотруднику.' />
+                  <img src={lines2Img.src} alt='линии' className={styles.stages__images_2} />
+                </div>
+                <div className={styles.stages__subcontainer}>
+                  <Stage
+                    index={3}
+                    title='Оплатите услугу'
+                    description='Внесите плату за услугу, размер которой зависит от выбранного вами типа карты.'
+                    style={{ maxWidth: '517px' }}
+                  />
+                  <img src={lines3Img.src} alt='линии' className={styles.stages__images_3} />
+                  <Stage
+                    index={4}
+                    title='Ожидайте подтверждение об открытии счета'
+                    description='На этом этапе остается только дождаться, пока счет не будет открыт.'
+                    style={{ marginRight: '165px' }}
+                  />
+                  <img src={lines4Img.src} alt='линии' className={styles.stages__images_4} />
+                </div>
+                <div className={styles.stages__subcontainer}>
+                  <Stage
+                    index={5}
+                    title='Готово!'
+                    description='Теперь вы можете пользоваться своей картой зарубежного банка для международных операций, не забудте уведомить ФНС об открытии иностранного счета (это не сложно, мы вам поможем).'
+                    style={{ maxWidth: '770px' }}
+                  />
+                </div>
+              </>
+            }
+          />
+          <VariableRender renderOnMob>
+            <div className={styles.stages__subcontainer}>
+              <Stage
+                index={1}
+                title='Выбор карты'
+                description='Ознакомьтесь с информацией и  свяжитесь с менеджером для обсуждения всех деталей и дальнейших шагов.'
+              />
+              <img src={downImages.src} alt='линии' className={styles.stages__images_down} />
+              <Stage
+                index={2}
+                title='Отправляете необходимые документы и данные'
+                description='Если доверенность не требуется, достаточно будет скана вашего паспорта РФ или загранпаспорта. Если оформление будет проходить по доверенности, вам потребуется отправить нотариально заверенные документы почтой нашему сотруднику.' />
+              <img src={downImages.src} alt='линии' className={styles.stages__images_down} />
+              <Stage
+                index={3}
+                title='Оплатите услугу'
+                description='Внесите плату за услугу, размер которой зависит от выбранного вами типа карты.'
+              />
+              <img src={downImages.src} alt='линии' className={styles.stages__images_down} />
+              <Stage
+                index={4}
+                title='Ожидайте подтверждение об открытии счета'
+                description='На этом этапе остается только дождаться, пока счет не будет открыт.'
+              />
+              <img src={downImages.src} alt='линии' className={styles.stages__images_down} />
+              <Stage
+                index={5}
+                title='Готово!'
+                description='Теперь вы можете пользоваться своей картой зарубежного банка для международных операций, не забудте уведомить ФНС об открытии иностранного счета (это не сложно, мы вам поможем).'
+              />
+            </div>
+          </VariableRender>
         </div>
       </section>
       <section id='reviews' className={styles.reviews}>
         <h2 className={styles.heading}>Отзывы</h2>
         <div className={styles.reviews__container}>
-          <img src={review1Img.src} alt='скриншот отзыва' />
-          <img src={review2Img.src} alt='скриншот отзыва' />
-          <img src={review3Img.src} alt='скриншот отзыва' />
+          <VariableRender renderOnDesk>
+            <>
+              <img src={review1Img.src} alt='скриншот отзыва' />
+              <img src={review2Img.src} alt='скриншот отзыва' />
+              <img src={review3Img.src} alt='скриншот отзыва' />
+            </>
+          </VariableRender>
+          <VariableRender renderOnMob>
+            <SwiperImages />
+          </VariableRender>
+
         </div>
       </section>
       <section id='question_and_answer' className={styles.qaa}>

@@ -8,6 +8,7 @@
     width: 100%;
     z-index: 1;
     background-color: white;
+
     &__index {
         font-size: 102px;
         font-weight: 500;
@@ -26,4 +27,33 @@
         margin-top: 16px;
         font-size: 24px;
     }
+}
+
+@media screen and (max-width: 1279px) {
+    .stage {
+        padding: 16px;
+        padding-top: 24px;
+        padding-bottom: 30px;
+        &__index {
+            font-size: 65px;
+            font-weight: 500;
+            line-height: 78.66px;
+        }
+
+        &__title {
+            margin-top: 16px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24.2px;
+
+        }
+
+        &__description {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16.94px;
+        }
+    }
+
 }

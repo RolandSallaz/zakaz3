@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 64px;
     margin-top: 312px;
+
     &__container {
         display: flex;
         gap: 64px;
@@ -95,36 +96,29 @@
     }
 }
 
-@media screen and (max-width: 1820px) {
-    .advantages {
-        margin-top: 194px;
-        &__container {
-            display: flex;
-            flex-direction: column;
-            gap:20px;
-        }
-    }
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 637px;
+    gap: 27px;
+    margin-top: 245px;
+}
+
+
+
+@media screen and (max-width: 1600px) {
     .stages {
         &__images {
             &_2 {
-                top:75%;
+                top: 85%;
             }
         }
     }
-  }
+}
 
-  @media screen and (max-width: 1600px) {
-    .stages {
-        &__images {
-            &_2 {
-                top:85%;
-            }
-        }
-    }
-  }
-
-  .reviews {
+.reviews {
     margin-top: 200px;
+
     &__container {
         margin: 0 auto;
         margin-top: 45px;
@@ -132,18 +126,106 @@
         width: calc(100% - 152px);
         gap: 30px;
     }
-  }
+}
 
-  .qaa {
+.qaa {
     margin-top: 200px;
+
     &__container {
         margin-top: 50px;
         display: flex;
         flex-direction: column;
-        gap:25px;
+        gap: 25px;
     }
-  }
+}
 
-  .main {
+.main {
     padding-bottom: 110px;
-  }
+}
+
+@media screen and (max-width: 1279px) {
+    .main {
+        padding-bottom: 204px;
+    }
+    
+    .qaa {
+        margin-top: 150px;
+    }
+    .reviews {
+        margin-top: 150px;
+        width: 100%;
+        padding: 0;
+        &__container {
+            width: 100%;
+
+        }
+    }
+
+    .usages {
+        margin-top: 150px;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    .heading {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 29.05px;
+        text-align: center;
+
+    }
+
+    .advantages {
+        margin-top: 194px;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .stages {
+        margin-top: 150px;
+
+        &__images {
+            &_2 {
+                top: 75%;
+            }
+
+            &_down {
+                width: auto;
+                height: 64px;
+            }
+        }
+
+        &__container {}
+
+        &__subcontainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .cards {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        ;
+    }
+
+    .services {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+}
