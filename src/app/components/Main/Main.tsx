@@ -19,6 +19,7 @@ import lines4Img from '../../../../public/lines4.svg';
 import review1Img from '../../../../public/IMAGE 2024-11-25 15_51_03 1.png';
 import review2Img from '../../../../public/IMAGE 2024-11-25 15_51_04 1.png';
 import review3Img from '../../../../public/IMAGE 2024-11-25 15_51_06 1.png';
+import reviewImg from '../../../../public/review.jpg';
 import Card from '../Card/Card';
 import Stage from '../Stage/Stage';
 import Qaa from '../Qaa/Qaa';
@@ -345,6 +346,7 @@ export default function Main() {
               <img src={review1Img.src} alt='скриншот отзыва' />
               <img src={review2Img.src} alt='скриншот отзыва' />
               <img src={review3Img.src} alt='скриншот отзыва' />
+              <img src={reviewImg.src} alt='скриншот отзыва' />
             </>
           </VariableRender>
           <VariableRender renderOnMob>

@@ -6,8 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ['cyrillic'] })
 
 export const metadata: Metadata = {
-  title: "ОФОРМИТЬ ИНОСТРАННУЮ БАНКОВСКУЮ КАРТУ",
-  description: "ПОМОЖЕМ ОФОРМИТЬ ИНОСТРАННУЮ БАНКОВСКУЮ КАРТУ ДИСТАНЦИОННО",
+  title: "MasterCard Bridge",
+  description: "Иностранная банковская карта удаленно для России Visa и Mastercard. Для путешествий, сервисов и перевода денег",
   keywords: 'иностранная карта, купить иностранную карту, открыть иностранную карту, карта для пополнения стим, зарубежная карта'
 };
 
