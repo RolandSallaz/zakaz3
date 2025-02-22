@@ -1,23 +1,19 @@
-FROM node:21
+FROM node:18-alpine
+# Installing libvips-dev for sharp Compatibility
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev git
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
 
-WORKDIR /app
+WORKDIR /opt/
+COPY package.json package-lock.json ./
+RUN npm install -g node-gyp
+RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install
+ENV PATH /opt/node_modules/.bin:$PATH
 
-# Copy package.json to root directory
-COPY package.json .
-
-
-# Install dependencies, but not generate a yarn.lock file and fail if an update is needed
-RUN npm install --force --legacy-peer-deps
-
-# Copy strapi project files
+WORKDIR /opt/app
 COPY . .
-# ...
-
-# Build admin panel
-RUN npm build
-
-# Run on port 1337
+RUN chown -R node:node /opt/app
+USER node
+RUN ["npm", "run", "build"]
 EXPOSE 1337
-
-# Start strapi server
-CMD ["npm", "start"]
+CMD ["npm", "run", "develop"]
