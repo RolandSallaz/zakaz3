@@ -1,4 +1,4 @@
-FROM node:21-alpine AS base
+FROM node:21
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY package.json .
 
 
 # Install dependencies, but not generate a yarn.lock file and fail if an update is needed
-RUN npm install --force
+RUN npm install --force --legacy-peer-deps
 
 # Copy strapi project files
 COPY . .
