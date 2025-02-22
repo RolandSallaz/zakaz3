@@ -5,7 +5,7 @@ RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev l
 WORKDIR /opt/
 COPY package.json package-lock.json ./
 RUN npm install --force -g node-gyp
-RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --force
+
 ENV PATH /opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
