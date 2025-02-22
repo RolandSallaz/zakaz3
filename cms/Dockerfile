@@ -1,17 +1,9 @@
 FROM node:21-alpine
-# Installing libvips-dev for sharp Compatibility
-RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev git
-
-WORKDIR /opt/
-COPY package.json package-lock.json ./
-RUN npm install --force -g node-gyp
-
-ENV PATH /opt/node_modules/.bin:$PATH
-
-WORKDIR /opt/app
+WORKDIR /app
+COPY package*.json ./
+RUN npm i
 COPY . .
-RUN chown -R node:node /opt/app
-USER node
+
 RUN ["npm", "run", "build"]
 EXPOSE 1337
 CMD ["npm", "run", "develop"]
