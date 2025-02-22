@@ -17,6 +17,8 @@ services:
     build:
       context: cms
       dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
     restart: always
     ports:
       - "1337:1337"
@@ -33,6 +35,7 @@ services:
       - ./ssl:/etc/ssl
     depends_on:
       - frontend
+      - backend
     networks:
       - net
 
