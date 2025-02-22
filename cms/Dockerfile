@@ -1,3 +1,5 @@
+FROM node:21-alpine AS base
+
 WORKDIR /app
 
 # Copy package.json to root directory
