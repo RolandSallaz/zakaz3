@@ -4,17 +4,29 @@ services:
   frontend:
     container_name: "frontend"
     build:
-      context: ./
+      context: frontend
       dockerfile: Dockerfile
     restart: always
     ports:
       - 3000:3000
     networks:
       - net
-  
+      
+  backend:
+    container_name: "backend"
+    build:
+      context: cms
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "1337:1337"
+    networks:
+      - net
+
   nginx:
     build:
       context: nginx
+      dockerfile: Dockerfile
     ports:
       - "80:80"
       - "443:443"

@@ -27,8 +27,14 @@ import VariableRender from '../VariableRender/VariableRender';
 import Tag from '../Tag/Tag';
 import downImages from '../../../../public/downLines.svg';
 import SwiperImages from '../SwiperImages/SwiperImages';
+import { ICard, ISmallCard } from '@/app/lib/utils/types';
 
-export default function Main() {
+interface props {
+  cards: ICard[]
+  smallCards: ISmallCard[]
+}
+
+export default function Main({ cards, smallCards }: props) {
   return (
     <main className={styles.main}>
       <section id='advantages' className={styles.advantages}>
@@ -56,181 +62,25 @@ export default function Main() {
         </VariableRender>
       </section>
       <section id='cards' className={styles.cards}>
-        <Card
-          title='Казахстан'
-          subtitle='DEPOSIT CARD + ИИН'
-          description='Пластиковая неименная и виртуальная именная'
+        {cards?.map(({ id, title, subtitle, description, tags, card_types, list, price, binding_to_rf_number, registration_without_power }) => <Card
+          key={id}
+          title={title}
+          subtitle={subtitle}
+          description={description}
           tags={
-            <>
-              <Tag tag='USD' />
-              <Tag tag='KZT' />
-              <Tag tag='EUR' />
-              <Tag tag='RUB' />
-              <Tag tag='CNY' />
-              <Tag tag='TRY' />
-              <Tag tag='AED' />
-            </>
+            tags?.tag?.map((item) => <Tag tag={item} />)
           }
-          price={10000}
-          masterCard
-          subtags
-          listItems={[
-            'Ставка до 13% ГЭСВ',
-            'Пополнение моментальное с Цифра банка РФ, Сбер, Kwikpay, Почта банк, Бкс Инвестиции , ЗК, Газпромбанк, Bybit p2p  , МТС переводы',
-            'Ежемесячное начисление % на ежедневный остаток на счёте',
-            'SWIFT входящий нет ограничения €, исходящие без ограничений  от 20000€, в $ временные ограничения ',
-            'Оплачивайте покупки в путешествиях и на сайтах, кредитный бин для аренды авто, брони отелей, билетов',
-            'Выпуск и обслуживание виртуальной карты 0₸ ',
-            'Срок действия карты до 3 лет',
-            'Доставка только курьером лично в руки по РФ и Казахстан неименной карты 20000₸ (~4000₽) спишет банк при оформлении доставки',
-            'Сроки оформления и доставки до 7 дней',
-            'Оформление официально без доверенности '
-          ]}
+          masterCard={card_types.includes('mastercard')}
+          visa={card_types.includes('visa')}
+          price={price}
+          listItems={list}
+          registration_without_power={registration_without_power}
+          binding_to_rf_number={binding_to_rf_number}
         />
-        <Card
-          title='Казахстан'
-          subtitle='DEPOSIT CARD + ИИН'
-          description='Именные пластиковая и виртуальная'
-          tags={
-            <>
-              <Tag tag='USD' />
-              <Tag tag='KZT' />
-              <Tag tag='EUR' />
-              <Tag tag='RUB' />
-              <Tag tag='CNY' />
-              <Tag tag='TRY' />
-              <Tag tag='AED' />
-            </>
-          }
-          masterCard
-          price={20000}
-          subtags
-          listItems={[
-            'Ставка до 13% ГЭСВ',
-            'Пополнение с Цифра банка РФ, Сбер, Kwikpay, Почта банк, Бкс Инвестиции , ЗК, Газпромбанк, Bybit p2p, МТС переводы',
-            'Ежемесячное начисление % на ежедневный остаток на счёте',
-            'Переводы с карты на карту 190 стран',
-            'SWIFT входящий нет ограничения €, исходящие без ограничений  от 20000€, в $ временные ограничения ',
-            'Оплачивайте покупки в путешествиях и на сайтах, кредитный бин для аренды авто, брони отелей, билетов',
-            'Оплачивайте покупки в путешествиях и на сайтах',
-            'Выпуск и обслуживание виртуальной карты 0₸',
-            'Срок действия карты 3 года',
-            'Доставка по всему Миру EMS, Казпочта, Сдек оплачивается клиентом от 1500₽, получение любым лицом кого укажите',
-            'Сроки оформления  и доставки 2 недели',
-            'Оформление официально без доверенности '
-          ]}
-        />
-        <Card
-          title='Казахстан'
-          subtitle='MasterCard/Visa B-bank'
-          masterCard
-          visa
-          description='Пластиковая именная'
-          tags={
-            <>
-              <Tag tag='KZT' />
-              <Tag tag='USD' />
-              <Tag tag='EUR' />
-              <Tag tag='RUB' />
-              <Tag tag='CNY' />
-            </>
-          }
-          price={49000}
-          subtags
-          listItems={[
-            'Удобное приложение на русском языке',
-            '3D Secure/PayWave',
-            'Пополнение Мтс, Почта банк, Bybit p2p, по корреспондентскому счету: БКС Банк, Фора-Банк, Газпромбанк, ЦентроКредит',
-            'Обслуживаение 0 ₸ в первый год и 150 ₸ в месяц со второго года',
-            'По умолчанию открывается в 1 валюте: KZT или USD или EUR. Дополнительно можно открыть виртульные карты и отдельные счета RUB, KZT, USD, EUR, CNY.',
-            'Исходящий Физ и Юр лицам, входящий SWIFT доллар/евро без ограничений',
-            'Срок действия карты 5 лет',
-            'Сроки оформления и доставки до 3 недель',
-            'Оформление без доверенности'
-          ]}
-        />
-        <Card
-          title='Таджикистан'
-          subtitle='Visa Gold, Platinum'
-          visa
-          description='Именные пластиковая и виртуальная'
-          tags={
-            <>
-              <Tag tag='USD' />
-              <Tag tag='EUR' />
-            </>
-          }
-          price={25000}
-          subtags
-          listItems={[
-            'Пополнение с Озон банка РФ, Сбер, Мтс, Kwikpay, ЗК, Тинькофф',
-            'Валюта ведения счета - USD или EUR',
-            'Лимит на онлайн покупки 2.300$ в сутки',
-            'Входящий доллар/евро без ограничений',
-            'Оплачивать международные покупки и сервисы в Интернете.',
-            'Приложение мобильного банка и поддержка банка на русском языке.',
-            'Срок действия карты 5 лет',
-            'Обслуживание карточного счета:',
-            'Visa Gold- 60$ за первые 6 мес  списываются сразу, далее с 7 месяца 5$ ежемесячно.',
-            'Platinum - 300$/10$ соответственно',
-            'Сроки оформления и доставки до 3 недель',
-            'Оформление без доверенности'
-          ]}
-        />
-        <Card
-          title='Киргизия'
-          subtitle='Visa Киргизия'
-          visa
-          description='Пластиковая именная'
-          tags={
-            <>
-              <Tag tag='USD' />
-              <Tag tag='EUR' />
-              <Tag tag='RUB' />
-            </>
-          }
-          price={25000}
-          subtags
-          listItems={[
-            'Visa Gold/Platinum/Infinite (именная):',
-            'Мультивалютная ($, €, ₽, Сом)',
-            'Срок действия 5, 6, 7 лет',
-            'Стоимость годового обслуживания 100$/250$/450$',
-            'Неснижаемый остаток (5.000/20.000/50.000 Сом)',
-            'Комиссия за снятие наличных 3%(min. 3$) до 200$ - 0, свыше - 3%/до 500$ - 0, свыше - 3%',
-            'Смс-оповещения 2$/мес',
-            'Пополнение РФ картами через СБП без комиссий (Сбером, Тинькофф и т.д) по корреспондентскому счету, swift, Мтс банк, bybit p2p, криптобиржа',
-            'SWIFT перевод физ. лицам исх. RUB – 0,2%. В EUR - 0,35% min 25 EUR. В USD временные ограничения',
-            'Предоставление выписки по счету',
-            'Суточные лимиты на выдачу наличных 5.000$/10.000$/20.000$',
-            'Суточные лимиты на безнал оплату 15.000$/40.000$/60.000$',
-            'Сроки оформления и доставки до 3 недель'
-          ]}
-        />
+        )}
       </section>
       <section className={styles.services}>
-        <Card
-          title='ИИН Казахстана без карты'
-          description='Файл формата pdf'
-          price={5000}
-          small
-          upd='Дистанционное оформление, обновление, восстановление, корректировка ИИН Казахстана'
-          service='ИИН нужен для получения любой официальной услуги в Казахстане, открытия банковского счета, оформления документов. При этом у получателя не возникает никаких налоговых обязательств. ИИН аналогичен документу, удостоверяющему личность, только в цифровом формате '
-        />
-        <Card
-          title='Sim/Esim Казахстана'
-          description='Физическая или виртуальная'
-          price={1000}
-          small
-          service='Sim или eSim дистанционно оформим и доставим пластиковую физическую карту Tele2 или Activ за счет клиента, или выпустим виртуальную сим-карту Казахастана'
-        />
-        <Card
-          title='ЭЦП'
-          description='Электронная цифровая подпись'
-          price={1000}
-          small
-          service='Электронная цифровая подпись - это реквизит электронного документа, предназначенный для защиты данного электронного документа от подделки, используется для подписи электронных документов и получения услуг ЦОН Казахстана'
-        />
+        {smallCards?.map(({ title, description, price, upd, info, id }) => <Card key={id} title={title} description={description} price={price} upd={upd} service={info} small />)}
       </section>
       <section id='usages' className={styles.usages}>
         <h2 className={styles.heading}>Для чего нужна зарубежная карта?</h2>

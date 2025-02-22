@@ -12,14 +12,15 @@ interface props {
     price: number;
     masterCard?: boolean;
     visa?: boolean;
-    subtags?: boolean;
     listItems?: string[];
     upd?: string;
     service?: string;
     small?: boolean;
+    registration_without_power?: boolean;
+    binding_to_rf_number?: boolean;
 }
 
-export default function Card({ title, subtitle, description, tags, price, masterCard, visa, subtags, listItems, upd, service, small }: props) {
+export default function Card({ title, subtitle, description, tags, price, masterCard, visa, registration_without_power, binding_to_rf_number, listItems, upd, service, small }: props) {
     return (
         <article className={styles.card}>
             <div className={`${styles.card__container} ${styles.card__container_top} ${small && styles.card__container_top_small}`}>
@@ -45,12 +46,10 @@ export default function Card({ title, subtitle, description, tags, price, master
                 </div>
             </div>
             <div className={`${styles.card__container} ${styles.card__container_bottom}`}>
-                {subtags && (
-                    <div className={styles.subtags}>
-                        <p className={styles.subtag}>Оформление без доверенности</p>
-                        <p className={styles.subtag}>Привязка к номеру РФ</p>
-                    </div>
-                )}
+                <div className={styles.subtags}>
+                    {registration_without_power && <p className={styles.subtag}>Оформление без доверенности</p>}
+                    {binding_to_rf_number && <p className={styles.subtag}>Привязка к номеру РФ</p>}
+                </div>
                 {service ? (
                     <p className={styles.service}>{service}</p>)
                     : (

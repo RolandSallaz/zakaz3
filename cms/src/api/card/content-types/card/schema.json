@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "singularName": "card",
+    "pluralName": "cards",
+    "displayName": "card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "required": true,
+      "type": "integer"
+    },
+    "registration_without_power": {
+      "type": "boolean",
+      "default": true
+    },
+    "binding_to_rf_number": {
+      "type": "boolean",
+      "default": true
+    },
+    "card_types": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "mastercard",
+        "visa"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "list": {
+      "type": "json"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": false,
+      "component": "all.tags"
+    }
+  }
+}
