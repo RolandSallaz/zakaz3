@@ -12,11 +12,7 @@ COPY yarn.lock .
 RUN yarn install --force --frozen-lockfile
 
 # Copy strapi project files
-COPY favicon.ico ./favicon.ico
-COPY src/ src/
-COPY public/ public/
-COPY database/ database/
-COPY config/ config/
+COPY . .
 # ...
 
 # Build admin panel
