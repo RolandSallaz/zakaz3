@@ -1,16 +1,19 @@
-ARG BASE_VERSION
-FROM strapi/base:${BASE_VERSION}
+FROM node:18-alpine3.18
+# Installing libvips-dev for sharp Compatibility
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev git
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
 
-ARG STRAPI_VERSION
-RUN yarn global add strapi@${STRAPI_VERSION}
+WORKDIR /opt/
+COPY package.json package-lock.json ./
+RUN npm install -g node-gyp
+RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install
+ENV PATH=/opt/node_modules/.bin:$PATH
 
-RUN mkdir /srv/app && chown 1000:1000 -R /srv/app
-
-WORKDIR /srv/app
-
-VOLUME /srv/app
-
-COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["docker-entrypoint.sh"]
-
-CMD ["strapi", "develop"]
+WORKDIR /opt/app
+COPY . .
+RUN chown -R node:node /opt/app
+USER node
+RUN ["npm", "run", "build"]
+EXPOSE 1337
+CMD ["npm", "run", "develop"]
