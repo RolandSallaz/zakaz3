@@ -1,9 +1,16 @@
-FROM node:21-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN NODE_OPTIONS="--max-old-space-size=2048" npm i --force
-COPY . .
+ARG BASE_VERSION
+FROM strapi/base:${BASE_VERSION}
 
-RUN ["npm", "run", "build"]
-EXPOSE 1337
-CMD ["npm", "run", "develop"]
+ARG STRAPI_VERSION
+RUN yarn global add strapi@${STRAPI_VERSION}
+
+RUN mkdir /srv/app && chown 1000:1000 -R /srv/app
+
+WORKDIR /srv/app
+
+VOLUME /srv/app
+
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["strapi", "develop"]
