@@ -1,0 +1,23 @@
+{
+    "collectionName": "components_all_tags",
+    "info": {
+        "displayName": "tags"
+    },
+    "options": {},
+    "attributes": {
+        "tag": {
+            "type": "customField",
+            "default": "[]",
+            "options": [
+                "USD",
+                "KZT",
+                "EUR",
+                "RUB",
+                "CNY",
+                "TRY",
+                "AED"
+            ],
+            "customField": "plugin::multi-select.multi-select"
+        }
+    }
+}
