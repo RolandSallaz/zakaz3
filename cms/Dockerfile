@@ -1,4 +1,4 @@
-FROM node:21-alpine AS base
+FROM node:23-alpine3.20 AS base
 ENV GENERATE_SOURCEMAP=false
 ENV NODE_OPTIONS=--max-old-space-size=16384
 # Installing libvips-dev for sharp Compatibility
