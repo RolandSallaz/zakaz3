@@ -68,7 +68,7 @@ export default function Main({ cards, smallCards }: props) {
           subtitle={subtitle}
           description={description}
           tags={
-            tags?.tag?.map((item) => <Tag tag={item} />)
+            tags?.tag?.map((item,i) => <Tag tag={item} key={i} />)
           }
           masterCard={card_types.includes('mastercard')}
           visa={card_types.includes('visa')}
