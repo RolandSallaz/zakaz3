@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
-import styles from "./page.module.css";
 import { apiGetCards, apiGetSmallCards } from "./lib/utils/api";
+import styles from "./page.module.css";
 
 
 async function fetchCards() {
