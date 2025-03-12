@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import styles from './Main.module.scss';
 import carbonDocImg from '../../../../public/carbon_document-signed.svg';
