@@ -4,7 +4,7 @@ WORKDIR /usr/app
 
 COPY package*.json ./
 
-RUN npm Compatibility
+RUN npm ci
 
 COPY . .
 
