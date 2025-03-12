@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Main.module.scss';
 import carbonDocImg from '../../../../public/carbon_document-signed.svg';
 import secureImg from '../../../../public/marketeq_secure.svg';
@@ -28,13 +28,17 @@ import Tag from '../Tag/Tag';
 import downImages from '../../../../public/downLines.svg';
 import SwiperImages from '../SwiperImages/SwiperImages';
 import { ICard, ISmallCard } from '@/app/lib/utils/types';
+import { apiGetCards, apiGetSmallCards } from '@/app/lib/utils/api';
 
-interface props {
-  cards: ICard[]
-  smallCards: ISmallCard[]
-}
+export default function Main() {
+  const [cards, setCards] = useState<ICard[]>([]);
+  const [smallCards, setSmallCards] = useState<ISmallCard[]>([]);
 
-export default function Main({ cards, smallCards }: props) {
+  useEffect(() => {
+    apiGetCards().then((res) => setCards(res.data))
+    apiGetSmallCards().then((res) => setSmallCards(res.data))
+  }, [])
+
   return (
     <main className={styles.main}>
       <section id='advantages' className={styles.advantages}>
@@ -68,7 +72,7 @@ export default function Main({ cards, smallCards }: props) {
           subtitle={subtitle}
           description={description}
           tags={
-            tags?.tag?.map((item,i) => <Tag tag={item} key={i} />)
+            tags?.tag?.map((item, i) => <Tag tag={item} key={i} />)
           }
           masterCard={card_types.includes('mastercard')}
           visa={card_types.includes('visa')}

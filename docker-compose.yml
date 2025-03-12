@@ -11,6 +11,8 @@ services:
       - 3000:3000
     networks:
       - net
+    depends_on:
+      - backend
       
   backend:
     container_name: "backend"
@@ -19,13 +21,17 @@ services:
       dockerfile: Dockerfile
     restart: always
     environment:
+      - APP_KEYS=${APP_KEYS}
+      - API_TOOKEN_SALT=${API_TOKEN_SALT}
+      - ADMIN_JWT_SECRET=${ADMIN_JWT_SECRET}
+      - TRANSFER_TOKEN_SALT=${TRANSFER_TOKEN_SALT}
       - NODE_ENV=production
-      - DATABASE_CLIENT=postgres
+      - DATABASE_CLIENT=${DATABASE_CLIENT}
       - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - DATABASE_NAME=strapi
-      - DATABASE_USERNAME=strapi
-      - DATABASE_PASSWORD=strapi
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
     ports:
       - 1337:1337
     volumes:
@@ -55,9 +61,11 @@ services:
     volumes:
       - ./db:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: strapi
-      POSTGRES_PASSWORD: strapi
-      POSTGRES_DB: strapi
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    networks:
+     - net
 
 networks:
   net:
