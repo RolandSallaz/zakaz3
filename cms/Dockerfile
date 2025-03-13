@@ -7,8 +7,6 @@ RUN npm install --force
 
 COPY . .
 
-RUN npm run build
-
 # Expose the port on which the app will run
 EXPOSE 1337
 
