@@ -1,11 +1,11 @@
 FROM node:18 AS base
 
-WORKDIR /opt/
+WORKDIR /usr/src/app
+
 COPY package*.json ./
 RUN npm install -g node-gyp
 RUN npm install --force
 
-WORKDIR /opt/app
 COPY . .
 
 EXPOSE 1337
