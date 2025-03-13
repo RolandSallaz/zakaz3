@@ -1,7 +1,7 @@
 FROM node:21 AS base
-WORKDIR /usr/src/app
-COPY package*.json ./
+
 WORKDIR /opt/
+COPY package*.json ./
 RUN npm install -g node-gyp
 RUN npm install --force
 
