@@ -12,6 +12,6 @@ RUN npm install --force
 WORKDIR /opt/app
 COPY . .
 
-RUN ["npm", "run", "build"]
+RUN ["npm", "run", "build", "--", "--debug"]
 EXPOSE 1337
 CMD ["npm", "run", "develop"]
