@@ -9,4 +9,4 @@ RUN npm install --force
 COPY . .
 
 EXPOSE 1337
-CMD ["npm", "run", "develop"]
+CMD ["npx", "strapi", "develop"]
