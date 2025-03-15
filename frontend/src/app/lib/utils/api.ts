@@ -1,6 +1,6 @@
 
 import { apiUrl } from "./config";
-import { ICard, ISmallCard } from "./types";
+import { ICard, ISmallCard, IUser } from "./types";
 
 export interface IFetch {
   url: string;
@@ -19,7 +19,7 @@ function _fetch<T>({ url, method = "GET", headers, body }: IFetch): Promise<T> {
   let authorization = "";
   // Получаем токен авторизации перед каждым запросом
   if (typeof window !== "undefined") {
-    authorization = localStorage.getItem("jwt") || "";
+    authorization = `Bearer ${localStorage.getItem("jwt")}` || "";
   }
 
   // Устанавливаем заголовок Content-Type в зависимости от типа тела запроса
@@ -53,4 +53,12 @@ export function apiGetCards() {
 
 export function apiGetSmallCards() {
   return _fetch<{ data: ISmallCard[] }>({ url: 'sim-cards?populate=*' })
+}
+
+export function apiLogin(dto: { email: string, password: string }) {
+  return _fetch<{ message: string, token: string, user: IUser }>({ url: 'login', body: dto, method: 'POST' })
+}
+
+export function apiGetUsers() {
+  return _fetch<IUser[]>({ url: 'users' })
 }

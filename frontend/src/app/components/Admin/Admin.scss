@@ -1,0 +1,17 @@
+.admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.authForm {
+    width:  320px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+    & input {
+        height: 30px;
+    }
+}

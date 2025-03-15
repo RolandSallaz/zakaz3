@@ -1,6 +1,5 @@
 export interface ICard {
     id: number;
-    documentId: number;
     title: string;
     subtitle: string;
     description: string;
@@ -9,9 +8,8 @@ export interface ICard {
     binding_to_rf_number: boolean;
     list: string[];
     card_types: string[];
-    tags: {
-        tag: string[]
-    }
+    tags: string[]
+
 }
 
 export interface ISmallCard {
@@ -21,4 +19,10 @@ export interface ISmallCard {
     price: number;
     info: string;
     upd: string;
+}
+
+export interface IUser {
+    id: number;
+    email: string;
+    password: string;
 }

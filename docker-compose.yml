@@ -17,15 +17,11 @@ services:
   backend:
     container_name: "backend"
     build:
-      context: cms
+      context: backend
       dockerfile: Dockerfile
     restart: always
     environment:
-      - APP_KEYS=${APP_KEYS}
-      - API_TOOKEN_SALT=${API_TOKEN_SALT}
-      - ADMIN_JWT_SECRET=${ADMIN_JWT_SECRET}
-      - TRANSFER_TOKEN_SALT=${TRANSFER_TOKEN_SALT}
-      - NODE_ENV=development
+      - NODE_ENV=production
       - DATABASE_CLIENT=${DATABASE_CLIENT}
       - DATABASE_HOST=db
       - DATABASE_PORT=${DATABASE_PORT}
