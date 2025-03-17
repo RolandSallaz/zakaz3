@@ -62,3 +62,15 @@ export function apiLogin(dto: { email: string, password: string }) {
 export function apiGetUsers() {
   return _fetch<IUser[]>({ url: 'users' })
 }
+
+export function apiAddUser(dto: IUser) {
+  return _fetch<{ message: string, user: IUser }>({ url: 'users', method: "POST", body: { ...dto } })
+}
+
+export function apiUpdateUser(id: number, dto: IUser) {
+  return _fetch<{ message: string, user: IUser }>({ url: `users/${id}`, method: 'PATCH', body: { ...dto } })
+}
+
+export function apiDeleteUser(id: number) {
+  return _fetch<{ message: string, user: IUser }>({ url: `users/${id}`, method: "DELETE" })
+}
