@@ -5,12 +5,12 @@ import errorHandler from './middlewares/errorHandler';
 import cors from 'cors'
 const app = express();
 const port = process.env.PORT || 1337;
-
+const prefix = process.env.NODE_ENV == "production" ? '/api' : '/'
 app.use(cors())
 
 app.use(express.json());
 
-app.use('/api', router);
+app.use(prefix, router);
 app.use(errorHandler)
 
 pool.connect()

@@ -267,3 +267,12 @@ $topContainerColor: #8D5DFF;
         gap: 10px;
     }
 }
+
+@media screen and (max-width: 1700px) {
+    .card__upd {
+        margin-top: 5px;
+    }
+    .contact_buttons {
+        gap:5px;
+    }
+}

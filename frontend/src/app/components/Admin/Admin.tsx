@@ -36,7 +36,6 @@ export default function Admin() {
             })
                 .catch((err) => {
                     setIsLoggedin(false)
-                    alert(err)
                 })
         }
         else if (tab == TAB.cards) {

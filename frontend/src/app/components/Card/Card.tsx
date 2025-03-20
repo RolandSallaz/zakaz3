@@ -21,6 +21,8 @@ interface props {
 }
 
 export default function Card({ title, subtitle, description, tags, price, masterCard, visa, registration_without_power, binding_to_rf_number, listItems, upd, service, small }: props) {
+
+    const formatPrice = new Intl.NumberFormat('ru-RU', { useGrouping: true }).format(price);
     return (
         <article className={styles.card}>
             <div className={`${styles.card__container} ${styles.card__container_top} ${small && styles.card__container_top_small}`}>
@@ -41,7 +43,7 @@ export default function Card({ title, subtitle, description, tags, price, master
                         {tags}
                     </div>
                     <p className={styles.card__price}>
-                        {price.toLocaleString('ru-RU')}  ₽
+                        {formatPrice}  ₽
                     </p>
                 </div>
             </div>
