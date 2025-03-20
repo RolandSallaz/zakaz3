@@ -3,15 +3,35 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
+    &__container {
+     display: flex;
+     flex-direction: column;
+     gap:30px;
+     align-items: center;
+    }
+    & .button {
+        align-self: center;
+        justify-self: center;
+        margin: auto;
+    }
 }
 
 .authForm {
-    width:  320px;
+    width: 320px;
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 
     & input {
         height: 30px;
+    }
+}
+
+.editCards {
+    & .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 360px);
+        gap:30px;
     }
 }

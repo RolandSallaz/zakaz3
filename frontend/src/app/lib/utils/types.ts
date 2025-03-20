@@ -9,7 +9,6 @@ export interface ICard {
     list: string[];
     card_types: string[];
     tags: string[]
-
 }
 
 export interface ISmallCard {

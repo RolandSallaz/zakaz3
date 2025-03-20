@@ -36,8 +36,8 @@ export default function Main() {
   const [smallCards, setSmallCards] = useState<ISmallCard[]>([]);
 
   useEffect(() => {
-    apiGetCards().then((res) => setCards(res.data))
-    apiGetSmallCards().then((res) => setSmallCards(res.data))
+    apiGetCards().then((res) => setCards(res))
+    apiGetSmallCards().then((res) => setSmallCards(res.cards))
   }, [])
 
   return (
@@ -73,7 +73,7 @@ export default function Main() {
           subtitle={subtitle}
           description={description}
           tags={
-            tags?.tag?.map((item, i) => <Tag tag={item} key={i} />)
+            tags?.map((item, i) => <Tag tag={item} key={i} />)
           }
           masterCard={card_types.includes('mastercard')}
           visa={card_types.includes('visa')}
