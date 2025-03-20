@@ -1,7 +1,6 @@
 FROM node:21-alpine AS base
 # Create app directory
-WORKDIR /usr/src/app
-
+WORKDIR /usr/src/
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 
