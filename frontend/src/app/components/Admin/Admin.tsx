@@ -34,7 +34,7 @@ export default function Admin() {
                 setIsLoggedin(true);
                 setUsers(res);
             })
-                .catch((err) => {
+                .catch(() => {
                     setIsLoggedin(false)
                 })
         }
