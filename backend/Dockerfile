@@ -13,7 +13,7 @@ COPY . .
 # Copy the .env and .env.development files
 
 # Creates a "dist" folder with the production build
-
+RUN npm run build
 # Expose the port on which the app will run
 EXPOSE 1337
 
