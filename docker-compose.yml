@@ -35,6 +35,8 @@ services:
       - ./app:/srv/app
     depends_on:
       - db
+    networks:
+     - net
 
   nginx:
     build:
