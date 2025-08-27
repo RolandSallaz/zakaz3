@@ -64,7 +64,6 @@ services:
       - ./ssl:/etc/ssl
       - acme_challenge:/usr/share/nginx/html/.well-known
     environment:
-   
       - DOMAIN=${DOMAIN}
     depends_on:
       - frontend
