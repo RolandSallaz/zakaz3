@@ -40,7 +40,7 @@ services:
 
   db:
     container_name: postgres
-    image: postgres:17
+    image: postgres:15.14
     restart: always
     volumes:
       - ./db:/var/lib/postgresql/data
