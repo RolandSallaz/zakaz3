@@ -95,8 +95,7 @@ services:
       - ./ssl:/etc/ssl
       - acme_challenge:/usr/share/nginx/html/.well-known
     depends_on:
-      nginx:
-        condition: service_started
+      - nginx 
 
 networks:
   net:
