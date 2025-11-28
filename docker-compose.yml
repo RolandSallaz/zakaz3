@@ -97,7 +97,6 @@ services:
     depends_on:
       nginx:
         condition: service_started
-        required: true
 
 networks:
   net:
