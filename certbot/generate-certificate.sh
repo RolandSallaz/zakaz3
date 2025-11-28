@@ -1,13 +1,44 @@
 #!/bin/bash
 # generate-certificate.sh
 
-# Выдаем сертификат с принудительным обновлением
-certbot certonly --standalone --email $EMAIL -d $DOMAIN --cert-name=certfolder --key-type rsa --agree-tos --force-renewal
+set -e  # Выход при любой ошибке
 
-# Удаляем старые сертификаты из примонтированной папки Nginx
-rm -rf /app/ssl/cert.pem
-rm -rf /app/ssl/key.pem
+DOMAIN=${DOMAIN:?"DOMAIN не установлен"}
+EMAIL=${EMAIL:?"EMAIL не установлен"}
 
-# Копируем сертификаты в папку Nginx (используем конкретное имя)
-cp /etc/letsencrypt/live/certfolder/fullchain.pem /app/ssl/cert.pem
-cp /etc/letsencrypt/live/certfolder/privkey.pem /app/ssl/key.pem
+CERT_NAME="certfolder"
+
+echo "Обновление SSL сертификата для домена: $DOMAIN"
+
+# Удаляем старый сертификат через certbot
+echo "Удаление старого сертификата..."
+certbot delete --cert-name "$CERT_NAME" 2>/dev/null || echo "Сертификат $CERT_NAME не существует, создаем новый"
+
+# Выдаем новый сертификат
+echo "Создание нового сертификата..."
+certbot certonly --standalone --email "$EMAIL" -d "$DOMAIN" --cert-name="$CERT_NAME" --key-type rsa --agree-tos --noninteractive
+
+# Проверяем существование сертификатов
+if [ ! -f "/etc/letsencrypt/live/$CERT_NAME/fullchain.pem" ]; then
+    echo "Ошибка: fullchain.pem не найден"
+    exit 1
+fi
+
+if [ ! -f "/etc/letsencrypt/live/$CERT_NAME/privkey.pem" ]; then
+    echo "Ошибка: privkey.pem не найден"
+    exit 1
+fi
+
+# Создаем папку если не существует
+mkdir -p /app/ssl
+
+# Копируем сертификаты
+echo "Копирование сертификатов..."
+cp "/etc/letsencrypt/live/$CERT_NAME/fullchain.pem" /app/ssl/cert.pem
+cp "/etc/letsencrypt/live/$CERT_NAME/privkey.pem" /app/ssl/key.pem
+
+# Устанавливаем правильные права
+chmod 644 /app/ssl/cert.pem
+chmod 600 /app/ssl/key.pem
+
+echo "✅ Сертификаты успешно обновлены и скопированы в /app/ssl/"
