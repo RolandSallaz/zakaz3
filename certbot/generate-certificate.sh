@@ -12,5 +12,5 @@ rm -rf /app/ssl/cert.pem
 rm -rf /app/ssl/key.pem
 
 # копируем сертификаты в папку Nginx
-cp /etc/letsencrypt/live/mastercardbridge.ru*/fullchain.pem /app/ssl/cert.pem
-cp /etc/letsencrypt/live/mastercardbridge.ru*/privkey.pem /app/ssl/key.pem
+cp /etc/letsencrypt/live/mastercardbridge.ru/fullchain.pem /app/ssl/cert.pem
+cp /etc/letsencrypt/live/mastercardbridge.ru/privkey.pem /app/ssl/key.pem
