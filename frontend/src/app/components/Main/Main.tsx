@@ -1,45 +1,40 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import styles from './Main.module.scss';
+import { ICard, ISmallCard } from '@/app/lib/utils/types';
 import carbonDocImg from '../../../../public/carbon_document-signed.svg';
-import secureImg from '../../../../public/marketeq_secure.svg';
-import doorImg from '../../../../public/system-uicons_door.svg';
-import supportImg from '../../../../public/fluent_person-support-24-regular.svg';
-import AdvantagesCard from '../advantagesCard/AdvantagesCard';
-import friendImg from '../../../../public/la_user-friends.svg';
-import tablerCashImg from '../../../../public/tabler_cash.svg';
-import fluentImg from '../../../../public/fluent-mdl2_shop.svg';
+import downImages from '../../../../public/downLines.svg';
 import gameImg from '../../../../public/fluent-mdl2_game.svg';
+import fluentImg from '../../../../public/fluent-mdl2_shop.svg';
+import supportImg from '../../../../public/fluent_person-support-24-regular.svg';
 import cardsTypesImg from '../../../../public/Frame 72.png';
-import planetImg from '../../../../public/ion_earth-outline.svg';
 import valutesImg from '../../../../public/Frame 73.svg';
+import review1Img from '../../../../public/IMAGE 2024-11-25 15_51_03 1.png';
+import review2Img from '../../../../public/IMAGE 2024-11-25 15_51_04 1.png';
+import review3Img from '../../../../public/IMAGE 2024-11-25 15_51_06 1.png';
+import planetImg from '../../../../public/ion_earth-outline.svg';
+import friendImg from '../../../../public/la_user-friends.svg';
 import lines1Img from '../../../../public/lines1.svg';
 import lines2Img from '../../../../public/lines2.svg';
 import lines3Img from '../../../../public/lines3.svg';
 import lines4Img from '../../../../public/lines4.svg';
-import review1Img from '../../../../public/IMAGE 2024-11-25 15_51_03 1.png';
-import review2Img from '../../../../public/IMAGE 2024-11-25 15_51_04 1.png';
-import review3Img from '../../../../public/IMAGE 2024-11-25 15_51_06 1.png';
+import secureImg from '../../../../public/marketeq_secure.svg';
 import reviewImg from '../../../../public/review.jpg';
+import doorImg from '../../../../public/system-uicons_door.svg';
+import tablerCashImg from '../../../../public/tabler_cash.svg';
+import AdvantagesCard from '../advantagesCard/AdvantagesCard';
 import Card from '../Card/Card';
-import Stage from '../Stage/Stage';
 import Qaa from '../Qaa/Qaa';
-import VariableRender from '../VariableRender/VariableRender';
+import Stage from '../Stage/Stage';
 import Tag from '../Tag/Tag';
-import downImages from '../../../../public/downLines.svg';
+import VariableRender from '../VariableRender/VariableRender';
+import styles from './Main.module.scss';
+import { FAQ_DATA } from '@/app/lib/utils/seo/faq';
 import SwiperImages from '../SwiperImages/SwiperImages';
-import { ICard, ISmallCard } from '@/app/lib/utils/types';
-import { apiGetCards, apiGetSmallCards } from '@/app/lib/utils/api';
 
-export default function Main() {
-  const [cards, setCards] = useState<ICard[]>([]);
-  const [smallCards, setSmallCards] = useState<ISmallCard[]>([]);
+interface MainProps {
+  cards: ICard[];
+  smallCards: ISmallCard[];
+}
 
-  useEffect(() => {
-    apiGetCards().then((res) => setCards(res))
-    apiGetSmallCards().then((res) => setSmallCards(res.cards))
-  }, [])
-
+export default function Main({ cards, smallCards }: MainProps) {
   return (
     <main className={styles.main}>
       <section id='advantages' className={styles.advantages}>
@@ -213,38 +208,9 @@ export default function Main() {
       <section id='question_and_answer' className={styles.qaa}>
         <h2 className={styles.heading}>Вопрос-ответ</h2>
         <div className={styles.qaa__container}>
-          <Qaa
-            question='ВЫ ГАРАНТИРУЕТЕ ЧТО СЧЕТ БУДЕТ ОТКРЫТ?'
-            answer='Мы гарантируем либо открытие счета, либо возврат денег.' />
-          <Qaa
-            question='В каких странах работает карта?'
-            answer='Карта функционирует во всех странах и регионах, за исключением: России, Кубы, Ирана, Судана, Сирии и Северной Кореи.' />
-          <Qaa
-            question='В каких валютах можно открыть счет?'
-            answer='Счета открываются в четырех валютах: тенге, рублях, долларах и евро. Карта является мультивалютной, поэтому средства списываются в той валюте, в которой проводится платеж. Если на счете недостаточно средств в нужной валюте, сумма будет списана в другой валюте.' />
-          <Qaa
-            question='Требуется ли посещение Казахстана для оформления ИИН или выпуска карты?'
-            answer='Нет, оформление ИИН и выпуск карты осуществляется дистанционно, без необходимости посещения Казахстана.' />
-          <Qaa
-            question='Где можно получить карту?'
-            answer='Доставка карты осуществляется курьерской службой только по территории России, в крупные города, включая областные центры.
-❗️Вы получите уведомление со ссылкой от курьерской службы, по которой можно будет согласовать и изменить время и адрес доставки.' />
-          <Qaa question='Сколько времени занимает выпуск карты?' answer='Актуальное время офорлмения ИИН уточняйте у менеджера
-
-Выпуск виртуальной карты занимает 1 день
-
-Доставка пластика занимает 1-2 недели, но обычно происходит быстрее.' />
-          <Qaa question='Нужен ли казахстанский номер телефона для регистрации в личном кабинете банка?' answer='Нет, карта и личный кабинет будут привязаны к вашему российскому номеру телефона.' />
-          <Qaa question='Можно ли привязать карту к Apple Pay, Google Pay и Samsung Pay?' answer='Да, можно привязать как физическую, так и виртуальную карту (по функционалу обе карты равнозначны).' />
-          <Qaa question='Как пополнить счета карты?' answer='Пополнение возможно переводами с карт российских банков, переводом рублей или долларов через SWIFT-перевод из банков РФ или других стран.' />
-          <Qaa question='Сколько стоит обслуживание карты?' answer='Обслуживание карты бесплатно.' />
-          <Qaa question='Какие документы нужны для оформления карты?' answer='Скан основного разворота загранпаспорта (нужно предъявить при вручении карты)
-ФИО
-Номер телефона
-Важно: скан должен быть выполнен на стандартном белом фоне с помощью сканера, без обрезанных краев. Также потребуется заполнить заявку.' />
-          <Qaa question='Выпускается ли именная карта?' answer='Карта является именной, но без указания имени и фамилии на самом пластике. При оформлении покупок в интернете необходимо указывать имя и фамилию как в загранпаспорте. Так же есть возможность заказать карту с указанием имени на пластике.' />
-          <Qaa question='Возможен ли выпуск карты нерезидентам РФ?' answer='Да, за актуальным списком обращайтесь к менеджеру' />
-          <Qaa question='Возможен ли срочный выпуск карты?' answer='Да' />
+          {FAQ_DATA.map(({ question, answer }) => (
+            <Qaa key={question} question={question} answer={answer} />
+          ))}
         </div>
       </section>
     </main>

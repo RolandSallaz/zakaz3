@@ -28,7 +28,7 @@ export default function Card({ title, subtitle, description, tags, price, master
             <div className={`${styles.card__container} ${styles.card__container_top} ${small && styles.card__container_top_small}`}>
                 <div className={styles.card__info_container}>
                     <div className={styles.card__subcontainer}>
-                        <h2 className={styles.card__name}>{title}</h2>
+                        <h3 className={styles.card__name}>{title}</h3>
                         <p className={styles.card__subtitle}>{subtitle}</p>
                         <p className={styles.card__description}>{description}</p>
                     </div>

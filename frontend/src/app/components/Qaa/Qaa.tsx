@@ -18,7 +18,7 @@ export default function Qaa({ question, answer }: props) {
     return (
         <div className={styles.qaa}>
             <div className={styles.qaa__flexContainer} onClick={handleChangeOpenState}>
-                <p className={styles.qaa__question}>{question}</p>
+                <h3 className={styles.qaa__question}>{question}</h3>
                 {isOpened ? <img src={minusImg.src} alt='иконка открытия/закрытия' className={styles.qaa__image} /> : <img src={plusImg.src} alt='иконка открытия/закрытия' className={styles.qaa__image} />}
             </div>
             <p className={`${styles.qaa__answer} ${isOpened && styles.qaa__answer_opened}`}>{answer}</p>

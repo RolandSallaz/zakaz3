@@ -12,7 +12,7 @@ export default function AdvantagesCard({ title, description, imageLink, withPurp
     return (
         <div className='advantages-card'>
             <img src={imageLink} alt={`иконка ${title}`} className='advantages-card__image' style={{width: `${width}px`}} />
-            <h2 className='advantages-card__title'>{title}</h2>
+            <h3 className='advantages-card__title'>{title}</h3>
             {withPurpleText ?
                 <p className='advantages-card__description'>Скидка <span className='advantages-card__purple'>10%</span> при покупке 2-х карт одновременно</p>
                 :

@@ -7,12 +7,12 @@ import VariableRender from '../VariableRender/VariableRender';
 
 export default function Header() {
     return (
-        <header className='header'>
+        <header className='header' aria-labelledby='page-title'>
 
             <HeaderNav />
             <div className='header__flex-container'>
                 <div className='header__sub'>
-                    <h1 className='header__heading'>ПОМОЖЕМ ОФОРМИТЬ ИНОСТРАННУЮ БАНКОВСКУЮ КАРТУ ДИСТАНЦИОННО</h1>
+                    <h1 id='page-title' className='visuallyHidden'>Поможем оформить зарубежную банковскую карту Visa и Mastercard удалённо</h1>
                     <p className='header__description'>Оплачивайте онлайн-сервисы, совершайте покупки и бронируйте отели, как раньше</p>
                     <VariableRender renderOnMob>
                         <HeaderImage isMob />

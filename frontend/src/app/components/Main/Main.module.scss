@@ -1,8 +1,22 @@
+/* ===================== */
+/* MAIN LAYOUT */
+/* ===================== */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 200px; /* единый вертикальный ритм */
+    padding-bottom: 110px;
+}
+
+/* ===================== */
+/* ADVANTAGES */
+/* ===================== */
+
 .advantages {
     display: flex;
     flex-direction: column;
     gap: 64px;
-    margin-top: 312px;
 
     &__container {
         display: flex;
@@ -11,13 +25,31 @@
     }
 }
 
+/* ===================== */
+/* CARDS */
+/* ===================== */
+
 .cards {
-    margin-top: 193px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: row;
     gap: 90px 40px;
 }
+
+/* ===================== */
+/* SERVICES */
+/* ===================== */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 637px;
+    gap: 27px;
+}
+
+/* ===================== */
+/* HEADINGS */
+/* ===================== */
 
 .heading {
     font-size: 61px;
@@ -25,10 +57,14 @@
     color: #8D5DFF;
     width: 100%;
     text-align: center;
+    min-height: 1.2em; /* защита от CLS при загрузке шрифта */
 }
 
+/* ===================== */
+/* USAGES */
+/* ===================== */
+
 .usages {
-    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,15 +78,17 @@
     }
 }
 
+/* ===================== */
+/* STAGES */
+/* ===================== */
+
 .stages {
-    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     &__container {
         margin-top: 62px;
-
     }
 
     &__subcontainer {
@@ -59,7 +97,7 @@
         position: relative;
 
         & img {
-            width: auto;
+            display: block;
             z-index: -1;
         }
 
@@ -75,36 +113,67 @@
     &__images {
         &_1 {
             width: 135px;
+            aspect-ratio: 135 / 40;
         }
 
         &_2 {
             position: absolute;
             right: 0;
             top: 50%;
-            width: calc(100% - 15%) !important;
+            width: calc(100% - 15%);
+            aspect-ratio: 100 / 12;
         }
 
         &_3 {
             width: 303px;
+            aspect-ratio: 303 / 60;
         }
 
         &_4 {
             position: absolute;
             right: 0;
             top: 50%;
+            aspect-ratio: 100 / 12;
+        }
+
+        &_down {
+            width: auto;
+            height: 64px;
+            aspect-ratio: 1 / 1;
         }
     }
 }
 
-.services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 637px;
-    gap: 27px;
-    margin-top: 245px;
+/* ===================== */
+/* REVIEWS */
+/* ===================== */
+
+.reviews {
+    &__container {
+        margin: 0 auto;
+        margin-top: 45px;
+        display: flex;
+        width: calc(100% - 152px);
+        gap: 30px;
+    }
 }
 
+/* ===================== */
+/* QAA */
+/* ===================== */
 
+.qaa {
+    &__container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+/* ===================== */
+/* MEDIA: <= 1600px */
+/* ===================== */
 
 @media screen and (max-width: 1600px) {
     .stages {
@@ -116,54 +185,41 @@
     }
 }
 
-.reviews {
-    margin-top: 200px;
-
-    &__container {
-        margin: 0 auto;
-        margin-top: 45px;
-        display: flex;
-        width: calc(100% - 152px);
-        gap: 30px;
-    }
-}
-
-.qaa {
-    margin-top: 200px;
-
-    &__container {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-    }
-}
-
-.main {
-    padding-bottom: 110px;
-}
+/* ===================== */
+/* MEDIA: <= 1279px */
+/* ===================== */
 
 @media screen and (max-width: 1279px) {
     .main {
+        gap: 150px;
         padding-bottom: 204px;
     }
-    
-    .qaa {
-        margin-top: 150px;
-    }
-    .reviews {
-        margin-top: 150px;
-        width: 100%;
-        padding: 0;
-        &__container {
-            width: 100%;
 
+    .heading {
+        font-size: 22px;
+        line-height: 29.05px;
+    }
+
+    .advantages {
+        &__container {
+            flex-direction: column;
+            gap: 20px;
         }
     }
 
-    .usages {
-        margin-top: 150px;
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
 
+    .services {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .usages {
         &__container {
             display: flex;
             flex-direction: column;
@@ -171,61 +227,25 @@
         }
     }
 
-    .heading {
-        font-size: 22px;
-        font-weight: 700;
-        line-height: 29.05px;
-        text-align: center;
-
-    }
-
-    .advantages {
-        margin-top: 194px;
-
-        &__container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-    }
-
     .stages {
-        margin-top: 150px;
-
         &__images {
             &_2 {
                 top: 75%;
             }
-
-            &_down {
-                width: auto;
-                height: 64px;
-            }
         }
 
-        &__container {}
-
         &__subcontainer {
-            display: flex;
             flex-direction: column;
             gap: 10px;
         }
     }
 
-    .cards {
-        margin-top: 150px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        ;
+    .reviews {
+        width: 100%;
+        padding: 0;
+
+        &__container {
+            width: 100%;
+        }
     }
-
-    .services {
-        margin-top: 150px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-
 }

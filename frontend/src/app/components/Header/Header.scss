@@ -29,6 +29,18 @@
 
 }
 
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 
 
 
@@ -59,10 +71,11 @@
             text-align: center;
             margin-top: 12px;
         }
+
         &__button-container {
             margin-top: 39px;
             flex-direction: column;
-            gap:14px;
+            gap: 14px;
         }
     }
 }

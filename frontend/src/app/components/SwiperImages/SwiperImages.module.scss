@@ -1,9 +1,15 @@
 .swiper {
-    width: 100%;
-
-    &img {
-        width: 100%;
-        max-width: 261px;
-    }
+  width: 100%;
 }
 
+.slide {
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 261px;
+  aspect-ratio: 3 / 4;
+}
