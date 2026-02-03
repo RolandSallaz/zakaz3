@@ -1,23 +1,22 @@
-FROM node:21-alpine AS base
-# Create app directory
+FROM node:21-slim AS base
+
+# Рабочая директория
 WORKDIR /usr/src/app
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# Копируем package.json и lock
 COPY package*.json ./
 
-# Install app dependencies
-RUN npm install --force
+# Устанавливаем зависимости (sharp встанет без боли)
+RUN npm ci
 
-# Bundle app source
+# Копируем исходники
 COPY . .
 
-# Copy the .env and .env.development files
-
-# Creates a "dist" folder with the production build
+# Сборка Next.js
 RUN npm run build
 
-# Expose the port on which the app will run
+# Открываем порт
 EXPOSE 3000
 
-# Start the server using the production build
+# Запуск production-сервера
 CMD ["npm", "run", "start"]
