@@ -1,13 +1,18 @@
-FROM node:21-slim AS base
+FROM node:21-alpine
 
-# Рабочая директория
+# 👉 Обязательно для native-модулей
+RUN apk add --no-cache libc6-compat
+
 WORKDIR /usr/src/app
 
 # Копируем package.json и lock
 COPY package*.json ./
 
-# Устанавливаем зависимости (sharp встанет без боли)
-RUN npm ci
+# Ставим зависимости
+RUN npm install
+
+# 👉 ЯВНО ставим sharp под musl
+RUN npm install --os=linux --cpu=x64 --libc=musl sharp
 
 # Копируем исходники
 COPY . .
@@ -15,8 +20,6 @@ COPY . .
 # Сборка Next.js
 RUN npm run build
 
-# Открываем порт
 EXPOSE 3000
 
-# Запуск production-сервера
 CMD ["npm", "run", "start"]
