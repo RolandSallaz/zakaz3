@@ -12,7 +12,7 @@ export default function Header() {
             <HeaderNav />
             <div className='header__flex-container'>
                 <div className='header__sub'>
-                    <h1 id='page-title' className='visuallyHidden'>Поможем оформить зарубежную банковскую карту Visa и Mastercard удалённо</h1>
+                    <h1 id='page-title' className='header__heading'>Поможем оформить зарубежную банковскую карту Visa и Mastercard удалённо</h1>
                     <p className='header__description'>Оплачивайте онлайн-сервисы, совершайте покупки и бронируйте отели, как раньше</p>
                     <VariableRender renderOnMob>
                         <HeaderImage isMob />
